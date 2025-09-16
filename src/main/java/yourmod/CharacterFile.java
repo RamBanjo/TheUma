@@ -172,10 +172,10 @@ public class CharacterFile extends CustomPlayer {
     public static class Enums {
         //TODO: Change these.
         @SpireEnum
-        public static AbstractPlayer.PlayerClass THE_TODO;
-        @SpireEnum(name = "TODO_COLOR")
-        public static AbstractCard.CardColor TODO_COLOR;
-        @SpireEnum(name = "TODO_COLOR")
+        public static AbstractPlayer.PlayerClass THE_UMA;
+        @SpireEnum(name = "UMA_COLOR")
+        public static AbstractCard.CardColor UMA_COLOR;
+        @SpireEnum(name = "UMA_COLOR")
         @SuppressWarnings("unused")
         public static CardLibrary.LibraryType LIBRARY_COLOR;
     }
