@@ -6,5 +6,19 @@
       "todos"
     ],
     "DESCRIPTION": "TODO: Make your own epic keywords"
+  },
+  {
+    "PROPER_NAME": "Non-Uma",
+    "NAMES": [
+      "non-Uma"
+    ],
+    "DESCRIPTION": "Cards that are not native to The Uma, such as cards from other characters, colorless cards, statuses, or curses."
+  },
+  {
+    "PROPER_NAME": "Mood",
+    "NAMES": [
+      "mood"
+    ],
+    "DESCRIPTION": "Your current #yMood affects outgoing damage and Energy gain on turn start.  Awful: #b-2 Damage and #b-1 Energy  Bad: #b-1 Damage  Normal: #b0 Good: #b+1 Damage Great: #b+2 Damage and #b+1 Energy. If you end combat at #bAwful mood, there is a #b1 in #b4 chance a random #yCurse is added to your deck."
   }
 ]

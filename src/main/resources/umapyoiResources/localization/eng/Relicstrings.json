@@ -5,5 +5,84 @@
     "DESCRIPTIONS": [
       "Has no effect."
     ]
+  },
+
+  "${ModID}:MonarchCrown": {
+    "NAME": "Monarch's Crown",
+    "FLAVOR": "Heavy is the head that wears the crown...",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. Upon pickup, add a special #ystslib:Soulbound #rCurse to your deck.",
+      "Is my dream over...?"
+    ]
+  },
+
+  "${ModID}:BlueRose": {
+    "NAME": "Blue Rose",
+    "FLAVOR": "\"I'm not a heel... I'm a hero!\"",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. At the start of combat, set your #yumapyoi:Mood to #bAwful."
+    ]
+  },
+
+  "${ModID}:StandardTracenCleats": {
+    "NAME": "Standard Tracen Cleats",
+    "FLAVOR": "A pair of well-worn running shoes, designed to withstand an Umamusume's training routine.",
+    "DESCRIPTIONS": [
+      "Gain #b ",
+      " Vigor the first time extra cards are drawn each turn."
+    ]
+  },
+
+  "${ModID}:ChampionGoldenCleats": {
+    "NAME": "Champion's Golden Cleats",
+    "FLAVOR": "These once belonged to Tokino Minoru, a legendary Umamusume.",
+    "DESCRIPTIONS": [
+      "Replaces #yStandard #yTracen #yCleats [REMOVE_SPACE]. Gain #b ",
+      " Vigor whenever a card is created during combat."
+    ]
+  },
+
+  "${ModID}:Jukebox": {
+    "NAME": "Jukebox",
+    "FLAVOR": "Listening to this makes you want to go full speed ahead. BAKUSHIN!",
+    "DESCRIPTIONS": [
+      "At the start of combat, randomly add a copy of #yTeio #yStep+, #yGolshi #yKick+, or #yBAKUSHIN!+ to your hand. It costs #b0 until played."
+    ]
+  },
+
+  "${ModID}}VoidedChequeTwelveBillion": {
+    "NAME": "Voided Cheque for Twelve Billion Yen",
+    "FLAVOR": "For some reason, looking at this cheque fills you with melancholy.",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. At the start of combat, shuffle #b3 #rLate #rStarts into your draw pile."
+    ]
+  },
+
+  "${ModID}}JumboCutiePlush": {
+    "NAME": "Jumbo Cutie Plush",
+    "FLAVOR": "She looks just like you, except she's more marketable and a lot less chaotic.",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. At the start of combat, shuffle #b3",
+      " #rLate #rStarts into your draw pile."
+    ]
+  },
+
+  "${ModID}}ClassicTripleCrown": {
+    "NAME": "The Classic Triple Crown",
+    "FLAVOR": "\"Do not take the nationals lightly.\"",
+    "DESCRIPTIONS": [
+      "Once per turn, after playing #b",
+      " cards, draw #b",
+      " card."
+    ]
+  },
+
+  "${ModID}}CarrotCupcake": {
+    "NAME": "Carrot Cupcake",
+    "FLAVOR": "Pairs well with bitter juice!",
+    "DESCRIPTIONS": [
+      "Gain #b10 Max HP on pickup. Improve your #yumapyoi:Mood by #b1 rank every #b",
+      " cards played."
+    ]
   }
 }

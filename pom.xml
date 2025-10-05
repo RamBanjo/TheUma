@@ -7,13 +7,14 @@
     <version>0.0.1</version>
     <name>The Uma</name>
     <description>This mod adds Gold Ship from Umamusume as a playable character. Anything but training, even if it means slaying the spire.</description>
+
     <!-- Change the above for mod information. -->
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <SlayTheSpire.version>12-22-2020</SlayTheSpire.version>
+        <SlayTheSpire.version>12-18-2022</SlayTheSpire.version>
         <ModTheSpire.version>3.18.2</ModTheSpire.version>
 
         <!-- CHANGE THIS TO MATCH YOUR MODID FIELD IN THE MAIN TodoMod CLASS FILE -->

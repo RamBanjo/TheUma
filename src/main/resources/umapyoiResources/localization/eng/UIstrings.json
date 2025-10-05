@@ -1,3 +1,5 @@
 {
-    
+    "${ModID}:SoulboundMod": {
+      "TEXT": ["%s NL stslib:Soulbound."]
+    }
 }

@@ -6,5 +6,32 @@
       " #yStrength and #b",
       " #yDexterity."
     ]
+  },
+  "${ModID}:UmaMood": {
+  "NAME": "Mood",
+  "DESCRIPTIONS": ["Your current mood is #y",
+    " [REMOVE_SPACE]. Your attacks have #b",
+    " extra damage and you gain #b",
+    " Energy each turn.",
+    "Great",
+    "Good",
+    "Normal",
+    "Bad",
+    "Awful",
+    " If you end combat now, you have a #b1 in #b4 chance to gain a #rCurse [REMOVE_SPACE]!",
+    "My mood remains Great!",
+    "My mood remains Awful..."]
+  },
+  "${ModID}:LateSurge": {
+  "NAME": "Late Surge",
+  "DESCRIPTIONS": [
+    "Gain #b",
+    " #yVigor next turn."]
+  },
+
+  "${ModID}:FickleMaiden": {
+    "NAME": "Fickle Maiden",
+    "DESCRIPTIONS": [
+      "The next time your #yMood changes, return all copies of #yFickle #yMaiden from the Exhaust pile to your hand. If your hand is full, the excess goes to your discard."]
   }
 }

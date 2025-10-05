@@ -2,9 +2,10 @@
   "modid": "${ModID}",
   "name": "${project.name}",
   "author_list": [
-    "Anonymous, as of yet!"
+    "RamChops Games"
   ],
   "description": "${project.description}",
+  "credits": "Made with the Pro Template by DarkVexon et al.",
   "version": "${project.version}",
   "sts_version": "${SlayTheSpire.version}",
   "mts_version": "${ModTheSpire.version}",
