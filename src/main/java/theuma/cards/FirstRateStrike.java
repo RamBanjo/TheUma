@@ -27,6 +27,7 @@ public class FirstRateStrike extends AbstractEasyCard {
         tags.add(CardTags.STRIKE);
     }
 
+    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         atb(new FirstRateStrikeAction(m, new DamageInfo(p, this.damage, this.damageType)));
 //        System.out.println(m.lastDamageTaken);

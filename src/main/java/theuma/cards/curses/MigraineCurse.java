@@ -1,9 +1,6 @@
-package theuma.cards.status;
+package theuma.cards.curses;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.CardQueueItem;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -11,29 +8,25 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.DrawReductionPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import theuma.cards.AbstractEasyCard;
+import theuma.powers.UmaMoodPower;
 
 import static theuma.ModFile.makeID;
 import static theuma.util.Wiz.applyToSelf;
 import static theuma.util.Wiz.applyToSelfTop;
 
-public class SlowMetabolismStatus extends AbstractEasyCard {
-    public final static String ID = makeID("SlowMetabolismStatus");
+public class MigraineCurse extends AbstractEasyCard {
+    public final static String ID = makeID("MigraineCurse");
     // intellij stuff STATUS, SELF, COMMON, 0, 0, 0, 0, 0, 0
 
-    public SlowMetabolismStatus() {
-        super(ID, -2, CardType.STATUS, CardRarity.COMMON, CardTarget.NONE, CardColor.COLORLESS);
-
-        this.baseMagicNumber = this.magicNumber = 2;
-        this.baseSecondMagic = this.secondMagic = 1;
-//        this.selfRetain = true;
+    public MigraineCurse() {
+        super(ID, -2, CardType.CURSE, CardRarity.COMMON, CardTarget.NONE, CardColor.COLORLESS);
+        this.isEthereal = true;
     }
-
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (this.dontTriggerOnUseCard) {
-            applyToSelf(new StrengthPower(AbstractDungeon.player, secondMagic));
-            applyToSelf(new DexterityPower(AbstractDungeon.player, magicNumber * -1));
+            applyToSelf(new UmaMoodPower(p, -2));
         }
 
     }
@@ -42,9 +35,6 @@ public class SlowMetabolismStatus extends AbstractEasyCard {
         this.dontTriggerOnUseCard = true;
         AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
     }
-
-
-
 
     public void upp() {
 //        upgradeDamage(0);

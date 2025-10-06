@@ -40,7 +40,7 @@ public class NightOwlStatus extends AbstractEasyCard {
         }
 
         Collections.shuffle(validCardsInHand);
-        AbstractCard cardToModifyCost = validCardsInHand.getFirst();
+        AbstractCard cardToModifyCost = validCardsInHand.get(0);
 
         if (cardToModifyCost != null){
             cardToModifyCost.updateCost(1);

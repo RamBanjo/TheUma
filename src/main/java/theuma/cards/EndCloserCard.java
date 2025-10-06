@@ -28,7 +28,6 @@ public class EndCloserCard extends AbstractEasyCard {
         for (int i = 0; i < magicNumber; i++){
 
             atb(new AttackDamageRandomEnemyAction(this, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-//            dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
         }
         atb(new PressEndTurnButtonAction());
     }

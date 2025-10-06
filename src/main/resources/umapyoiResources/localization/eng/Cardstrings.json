@@ -107,6 +107,20 @@
     ]
   },
 
+  "${ModID}:LateNightResearch": {
+    "NAME": "Late Night Research",
+    "DESCRIPTION": "Draw !M! cards. NL Worsen your umapyoi:Mood by 1 rank. NL umapyoi:Sorrow: Shuffle a *Night *Owl into your draw pile."
+  },
+
+  "${ModID}:Tether": {
+    "NAME": "Tether",
+    "DESCRIPTION": "Apply !M! Weak. NL Draw 1 card."
+  },
+
+  "${ModID}:Trick": {
+    "NAME": "Tether",
+    "DESCRIPTION": "Apply !M! Vulnerable. NL Draw 1 card."
+  },
 
   "${ModID}:LateStartStatus": {
     "NAME": "Late Start",
@@ -130,7 +144,12 @@
 
   "${ModID}:SlowMetabolismStatus": {
     "NAME": "Slow Metabolism",
-    "DESCRIPTION": "Unplayable. While this card is in your hand, you cannot gain Block."
+    "DESCRIPTION": "Unplayable. At the end of your turn, lose !M! Dexterity and gain !${ModID}:m2! Strength.}"
+  },
+
+  "${ModID}:LegFractureCurse": {
+    "NAME": "Fractured Leg",
+    "DESCRIPTION": "Innate. Unplayable. Retain. When Retained, worsen your umapyoi:Mood by 1 Rank. When exhausted, add a *Migraine, *Skin *Outbreak, and *Practice *Poor to the top of your draw pile."
   },
 
   "${ModID}:ExampleTwoAmountPowerCard": {

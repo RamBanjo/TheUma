@@ -20,5 +20,19 @@
       "mood"
     ],
     "DESCRIPTION": "Your current #yMood affects outgoing damage and Energy gain on turn start.  Awful: #b-2 Damage and #b-1 Energy  Bad: #b-1 Damage  Normal: #b0 Good: #b+1 Damage Great: #b+2 Damage and #b+1 Energy. If you end combat at #bAwful mood, there is a #b1 in #b4 chance a random #yCurse is added to your deck."
+  },
+  {
+    "PROPER_NAME": "Sorrow",
+    "NAMES": [
+      "sorrow"
+    ],
+    "DESCRIPTION": "Card's effect will activate if your #yMood is negative. (#bBad or #bAwful)"
+  },
+  {
+    "PROPER_NAME": "Joy",
+    "NAMES": [
+      "joy"
+    ],
+    "DESCRIPTION": "Card's effect will activate if your #yMood is positive. (#bGood or #bGreat)"
   }
 ]
