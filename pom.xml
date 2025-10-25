@@ -4,7 +4,7 @@
     <groupId>UnimportantInfo</groupId>
 
     <artifactId>TheUma</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.4</version>
     <name>The Uma</name>
     <description>This mod adds Gold Ship from Umamusume as a playable character. Anything but training, even if it means slaying the spire.</description>
 
@@ -22,8 +22,8 @@
         <!-- CHANGE THIS TO MATCH YOUR MODID FIELD IN THE MAIN TodoMod CLASS FILE -->
 
         <!--CHANGE THIS TO YOUR STEAM INSTALLATION-->
-<!--        <Steam.path>C:/Program Files (x86)/Steam/steamapps/</Steam.path>-->
-        <Steam.path>F:/SteamLibrary/steamapps/</Steam.path>
+        <Steam.path>C:/Program Files (x86)/Steam/steamapps/</Steam.path>
+<!--        <Steam.path>F:/SteamLibrary/steamapps/</Steam.path>-->
     </properties>
 
     <dependencies>

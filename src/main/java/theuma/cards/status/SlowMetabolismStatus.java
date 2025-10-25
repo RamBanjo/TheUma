@@ -43,13 +43,12 @@ public class SlowMetabolismStatus extends AbstractEasyCard {
         AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
     }
 
-
-
+    @Override
+    public boolean canUpgrade() {
+        return false;
+    }
 
     public void upp() {
-//        upgradeDamage(0);
-//        upgradeBlock(0);
-//        upgradeMagicNumber(0);
-//        upgradeBaseCost(-2);
+
     }
 }

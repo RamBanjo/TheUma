@@ -10,9 +10,12 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
+import theuma.vfx.OutOfCardsThoughtBubbleEffect;
 
 import static theuma.ModFile.makeID;
-import static theuma.util.Wiz.atb;
+import static theuma.util.Wiz.*;
+import static theuma.util.Wiz.adp;
 
 public class FrontRunnerCard extends AbstractEasyCard{
     public final static String ID = makeID("FrontRunner");
@@ -36,31 +39,35 @@ public class FrontRunnerCard extends AbstractEasyCard{
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
 
-        //draw 1 card
-        atb(new DrawCardAction(1));
+        //draw 1 card, do a followup action
+        atb(new DrawCardAction(1, new FrontRunnerDrawAction(damage, secondMagic, abstractMonster)));
+    }
 
-        //check if we actually drew something
-        AbstractCard card_drawn = null;
+    public static class FrontRunnerDrawAction extends AbstractGameAction{
 
-        boolean something_was_drawn = !DrawCardAction.drawnCards.isEmpty();
-            if (something_was_drawn){
-            card_drawn = DrawCardAction.drawnCards.get(0);
+        private int minimum = 0;
+
+        FrontRunnerDrawAction(int dam, int minimum, AbstractMonster target){
+            amount = dam;
+            this.minimum = minimum;
+            this.target = target;
         }
 
-        //if we drew a card...
-        if (card_drawn != null){
-            int seen_cost = card_drawn.costForTurn;
+        @Override
+        public void update() {
+            for (AbstractCard c: DrawCardAction.drawnCards){
+                int effectiveCost = Math.max(c.costForTurn, minimum);
 
-            //since we know -1 is x cost and -2 is unplayable
-            //we would set the effective mult to be the max between the mult itself or second magic.
-            seen_cost = Math.max(seen_cost, magicNumber);
+                if(c.costForTurn == -1){
+                    effectiveCost = Math.max(EnergyPanel.getCurrentEnergy(), minimum);
+                }
 
-            for (int i = 0; i < seen_cost; i ++){
-                dmg(abstractMonster, AbstractGameAction.AttackEffect.FIRE);
+                for(int i = 0; i < effectiveCost; i ++){
+                    att(new DamageAction(target, new DamageInfo(adp(), amount), AttackEffect.BLUNT_LIGHT));
+                }
+
             }
-        }else{
-//            ThoughtBubble tb = new ThoughtBubble(abstractPlayer.dialogX, abstractPlayer.dialogY, CANT_DRAW_STRING, true);
-//            AbstractDungeon.effectList.add(tb);
+            isDone = true;
         }
     }
 }

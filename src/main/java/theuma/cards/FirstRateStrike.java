@@ -29,17 +29,11 @@ public class FirstRateStrike extends AbstractEasyCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+
+        if (m != null){
+            atb(new VFXAction(new ViolentAttackEffect(m.hb.cX, m.hb.cY, Color.GREEN)));
+        }
         atb(new FirstRateStrikeAction(m, new DamageInfo(p, this.damage, this.damageType)));
-//        System.out.println(m.lastDamageTaken);
-//        dmg(m, AbstractGameAction.AttackEffect.SMASH);
-//        att(new VFXAction(new ViolentAttackEffect(m.hb.cX, m.hb.cY, Color.GREEN), 0.5f));
-//        att(new WaitAction(0.5f));
-//
-//        m.damage(new DamageInfo(p, this.damage, this.damageType));
-////        System.out.println(m.lastDamageTaken);
-//        if (m.lastDamageTaken > 0){
-//            applyToSelfTop(new VigorPower(p, m.lastDamageTaken));
-//        }
     }
 
     public void upp() {

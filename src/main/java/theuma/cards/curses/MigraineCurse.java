@@ -19,7 +19,7 @@ public class MigraineCurse extends AbstractEasyCard {
     // intellij stuff STATUS, SELF, COMMON, 0, 0, 0, 0, 0, 0
 
     public MigraineCurse() {
-        super(ID, -2, CardType.CURSE, CardRarity.COMMON, CardTarget.NONE, CardColor.COLORLESS);
+        super(ID, -2, CardType.CURSE, CardRarity.COMMON, CardTarget.NONE, CardColor.CURSE);
         this.isEthereal = true;
     }
 
@@ -36,10 +36,12 @@ public class MigraineCurse extends AbstractEasyCard {
         AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
     }
 
+    @Override
+    public boolean canUpgrade() {
+        return false;
+    }
+
     public void upp() {
-//        upgradeDamage(0);
-//        upgradeBlock(0);
-//        upgradeMagicNumber(0);
-//        upgradeBaseCost(-2);
+
     }
 }

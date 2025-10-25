@@ -20,7 +20,9 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import theuma.cards.*;
-import theuma.relics.TodoItem;
+import theuma.relics.StandardTracenCleats;
+import theuma.util.ProAudio;
+import theuma.util.Wiz;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,13 +75,14 @@ public class CharacterFile extends CustomPlayer {
 
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(TodoItem.ID);
+        retVal.add(StandardTracenCleats.ID);
         return retVal;
     }
 
     @Override
     public void doCharSelectScreenSelectEffect() {
-        CardCrawlGame.sound.playA("UNLOCK_PING", MathUtils.random(-0.2F, 0.2F));
+//        CardCrawlGame.sound.playA(makeID("GOLSHI_CHEER"), MathUtils.random(-0.2F, 0.2F));
+        Wiz.playAudio(ProAudio.GOLSHI_CHEER);
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.SHORT,
                 false);
     }
@@ -100,7 +103,7 @@ public class CharacterFile extends CustomPlayer {
 
     @Override
     public String getCustomModeCharacterButtonSoundKey() {
-        return "UNLOCK_PING";
+        return makeID("GOLSHI_CHEER");
     }
 
     @Override
@@ -158,7 +161,13 @@ public class CharacterFile extends CustomPlayer {
     @Override
     public AbstractGameAction.AttackEffect[] getSpireHeartSlashEffect() {
         return new AbstractGameAction.AttackEffect[]{
-                AbstractGameAction.AttackEffect.SMASH};
+                AbstractGameAction.AttackEffect.BLUNT_HEAVY,
+                AbstractGameAction.AttackEffect.FIRE,
+                AbstractGameAction.AttackEffect.SLASH_HEAVY,
+                AbstractGameAction.AttackEffect.BLUNT_HEAVY,
+                AbstractGameAction.AttackEffect.FIRE,
+                AbstractGameAction.AttackEffect.SLASH_HEAVY,
+        };
     }
 
     @Override
@@ -175,9 +184,9 @@ public class CharacterFile extends CustomPlayer {
     public List<CutscenePanel> getCutscenePanels() {
         List<CutscenePanel> panels = new ArrayList();
 
-        panels.add(new CutscenePanel(makeCharacterPath("mainChar/ending/ending1.png"), "ATTACK_HEAVY"));
-        panels.add(new CutscenePanel(makeCharacterPath("mainChar/ending/ending2.png")));
-        panels.add(new CutscenePanel(makeCharacterPath("mainChar/ending/ending3.png")));
+        panels.add(new CutscenePanel(makeCharacterPath("mainChar/ending/ending1.png"), makeID("GOLSHI_ENDING_1")));
+        panels.add(new CutscenePanel(makeCharacterPath("mainChar/ending/ending2.png"), "ATTACK_HEAVY"));
+        panels.add(new CutscenePanel(makeCharacterPath("mainChar/ending/ending3.png"), makeID("GOLSHI_ENDING_2")));
         return panels;
     }
 

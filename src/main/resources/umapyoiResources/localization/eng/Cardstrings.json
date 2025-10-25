@@ -10,13 +10,13 @@
 
   "${ModID}:PaceChaser": {
     "NAME": "Pace Chaser",
-    "DESCRIPTION": "Draw 1 card. Gain Block equal to !M! times its cost. NL (X-cost and Unplayable count as 1.)",
+    "DESCRIPTION": "Draw 1 card. NL Gain Block equal to !M! times its cost. NL (X-cost and Unplayable count as 1.)",
     "UPGRADE_DESCRIPTION": "Draw 1 card. Gain Block equal to !M! times its cost. NL (X-cost, 0-cost, and Unplayable count as 1.)"
   },
 
   "${ModID}:FrontRunner": {
     "NAME": "Front Runner",
-    "DESCRIPTION": "Draw 1 card. Deal !D! damage X times, where X is the drawn card's cost. NL (X-cost and Unplayable count as 1.)",
+    "DESCRIPTION": "Draw 1 card. NL Deal !D! damage X times, where X is the drawn card's cost. NL (X-cost and Unplayable count as 1.)",
     "UPGRADE_DESCRIPTION": "Draw 1 card. Deal !D! damage X times, where X is the drawn card's cost. NL (X-cost, 0-cost, and Unplayable count as 1.)"
   },
 
@@ -28,7 +28,7 @@
 
   "${ModID}:EndCloser": {
     "NAME": "End Closer",
-    "DESCRIPTION": "Deal !D! damage to !M! random enemies. End your turn."
+    "DESCRIPTION": "Deal !D! damage to random enemies !M! times. NL End your turn."
   },
 
   "${ModID}:FreshRyegrass": {
@@ -38,34 +38,38 @@
 
   "${ModID}:MoodSwing": {
     "NAME": "Mood Swing",
-    "DESCRIPTION": "Deal !D! damage !M! times. Worsen umapyoi:Mood by !${ModID}:m2! rank."
+    "DESCRIPTION": "{@@}Deal !D! damage. Worsen umapyoi:Mood by 1 rank. NL umapyoi:Sorrow: Deal !D! damage !M! more time{!M!|>1=s}."
   },
 
   "${ModID}:ElatedCoverage": {
     "NAME": "Elated Coverage",
-    "DESCRIPTION": "Gain !B! Block. Improve umapyoi:Mood by !M! rank."
+    "DESCRIPTION": "Gain !B! Block. NL Improve umapyoi:Mood by !M! rank."
+  },
+
+  "${ModID}:ExhaustiveCoverage": {
+    "NAME": "Exhaustive Coverage",
+    "DESCRIPTION": "Gain !B! Block. NL Worsen umapyoi:Mood by !M! rank."
   },
 
   "${ModID}:VictoriaPorPlancha": {
     "NAME": "Victoria por Plancha",
-    "DESCRIPTION": "Choose to add a *Bash, *Clothesline, or *Uppercut with Exhaust and Ethereal to your hand. NL It costs 0 to play this turn.",
-    "UPGRADE_DESCRIPTION": "Choose to add a *Bash+, *Clothesline+, or *Uppercut+ with Exhaust and Ethereal to your hand. NL It costs 0 to play this turn.",
+    "DESCRIPTION": "{@@}Choose to add a *Bash{!Upgrades!|>0=+}, *Clothesline{!Upgrades!|>0=+}, or *Uppercut{!Upgrades!|>0=+} with Exhaust to your hand.",
     "EXTENDED_DESCRIPTION": [
       "Inspired by El Condor Pasa!"
     ]
   },
 
   "${ModID}:IntroductionToPhysiology": {
-    "NAME": "Introduction to Physiology",
-    "DESCRIPTION": "Choose to add an *Evolve, *Fire *Breathing, or *Noxious *Fumes to your hand. NL It costs 0 to play this turn. Exhaust.",
+    "NAME": "Intro to Physiology",
+    "DESCRIPTION": "Choose to add an *Evolve, *Fire *Breathing, or *Noxious *Fumes to your hand. NL It costs 0 until played. Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "Inspired by Agnes Tachyon!"
     ]
   },
 
   "${ModID}:LetsPumpIron": {
-    "NAME": "Let's Pump Some Iron!",
-    "DESCRIPTION": "Choose to add an *Inflame, *Dark *Embrace, or *Feel *No *Pain to your hand. NL It costs 0 to play this turn. Exhaust.",
+    "NAME": "Pump Iron",
+    "DESCRIPTION": "Choose to add an *Inflame, *Dark *Embrace, or *Feel *No *Pain to your hand. NL It costs 0 until played. Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "Inspired by Mejiro Ryan!"
     ]
@@ -73,7 +77,7 @@
 
   "${ModID}:FickleMaiden": {
     "NAME": "Fickle Maiden",
-    "DESCRIPTION": "Deal !D! damage. Exhaust. NL Return this card from the Exhaust pile whenever your umapyoi:Mood changes."
+    "DESCRIPTION": "Deal !D! damage. Exhaust. NL Return this card from the Exhaust pile whenever umapyoi:Mood changes."
   },
 
   "${ModID}:Acupuncture": {
@@ -99,7 +103,8 @@
 
   "${ModID}:GolshiKick": {
     "NAME": "Golshi Kick",
-    "DESCRIPTION": "Deal !D! damage. NL If !M! or more cards were played this turn, gain [E] and draw !${ModID}:m2! card(s).",
+    "DESCRIPTION": "Deal !D! damage. NL If !M! or more cards were played this turn, gain [E] and draw !${ModID}:m2! card.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL If !M! or more cards were played this turn, gain [E] and draw !${ModID}:m2! cards.",
     "EXTENDED_DESCRIPTION": [
       " NL (",
       " card played.)",
@@ -108,8 +113,8 @@
   },
 
   "${ModID}:LateNightResearch": {
-    "NAME": "Late Night Research",
-    "DESCRIPTION": "Draw !M! cards. NL Worsen your umapyoi:Mood by 1 rank. NL umapyoi:Sorrow: Shuffle a *Night *Owl into your draw pile."
+    "NAME": "Night Research",
+    "DESCRIPTION": "Draw !M! cards. NL Worsen umapyoi:Mood by 1 rank. NL umapyoi:Sorrow: Shuffle a *Night *Owl into your draw pile."
   },
 
   "${ModID}:Tether": {
@@ -118,8 +123,533 @@
   },
 
   "${ModID}:Trick": {
-    "NAME": "Tether",
+    "NAME": "Trick",
     "DESCRIPTION": "Apply !M! Vulnerable. NL Draw 1 card."
+  },
+
+  "${ModID}:BlackCoffee": {
+    "NAME": "Black Coffee",
+    "DESCRIPTION": "Gain 3 [E] . NL Worsen umapyoi:Mood by 1 rank and shuffle a *Migraine into your draw pile. Exhaust."
+  },
+
+  "${ModID}:BlueRoseCloser": {
+    "NAME": "Blue Rose Closer",
+    "DESCRIPTION": "{@@}Deal !D! damage. NL If this kills an enemy, gain !M! [E] and draw !M! card{!M!|>1=s}."
+  },
+
+  "${ModID}:CompetitiveSpirit": {
+    "NAME": "Competitive Spirit",
+    "DESCRIPTION": "Deal !D! damage. NL Add a copy of this card to the discard pile. NL Deal !M! extra damage for each copy of *Competitive *Spirit you have."
+  },
+
+  "${ModID}:HomestretchHaste": {
+    "NAME": "Homestretch Haste",
+    "DESCRIPTION": "{@@}Deal !D! damage. NL If this kills an enemy, draw !M! card{!M!|>1=s} and Exhaust."
+  },
+
+  "${ModID}:InspirationStrikes": {
+    "NAME": "Inspiration!",
+    "DESCRIPTION": "{@@}Draw 1 card. NL Exhaust 1 card. NL If a umapyoi:Non-Uma card was exhausted, draw !M! card{!M!|>1=s}."
+  },
+
+  "${ModID}:AdoredByAll": {
+    "NAME": "Adored By All",
+    "DESCRIPTION": "Deal !${ModID}:sd! damage. NL umapyoi:Joy: Deal !D! damage to ALL enemies as well."
+  },
+
+  "${ModID}:KiryuinsFavor": {
+    "NAME": "Kiryuin's Favorite",
+    "DESCRIPTION": "Gain !M! Vigor. NL umapyoi:Joy: Gain !${ModID}:m2! Vigor instead."
+  },
+
+  "${ModID}:LuckBeWithMe": {
+    "NAME": "Luck Be With Me!",
+    "DESCRIPTION": "Deal !D! damage. NL Scry !M!. NL This card deals !${ModID}:m2! more damage this combat for every umapyoi:non-Uma card discarded."
+  },
+
+  "${ModID}:PreparedToPass": {
+    "NAME": "Prepared to Pass",
+    "DESCRIPTION": "Gain !B! Block. Whenever you are attacked this turn, gain !M! Vigor."
+  },
+
+  "${ModID}:PureHeart": {
+    "NAME": "Pure Heart",
+    "DESCRIPTION": "Gain !B! Block. NL Exhaust a card. NL If it was a umapyoi:non-Uma card, gain !B! Block again."
+  },
+
+  "${ModID}:ShootingForVictory": {
+    "NAME": "Shooting for Victory",
+    "DESCRIPTION": "Deal !D! damage. NL Reduce the cost of a random umapyoi:non-Uma card in your hand by !M! this turn."
+  },
+
+  "${ModID}:SoftStep": {
+    "NAME": "Soft Step",
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Gain !B! Block. NL umapyoi:Joy: Draw !M! card{!M!|>1=s}."
+  },
+
+  "${ModID}:SuperDuperStoked": {
+    "NAME": "Super Duper Stoked!",
+    "DESCRIPTION": "Deal !D! damage. NL umapyoi:Joy: Deal !D! damage again."
+  },
+
+  "${ModID}:Sympathy": {
+    "NAME": "Sympathy",
+    "DESCRIPTION": "Gain !B! Block. NL Add a copy of this card to the discard pile. NL Gain !M! additional Block for each copy of *Sympathy you have."
+  },
+
+  "${ModID}:TargetInSight": {
+    "NAME": "Target In Sight",
+    "DESCRIPTION": "Add a *Go *For *The *Eyes and *Beam *Cell with Exhaust and Ethereal to your hand.",
+    "UPGRADE_DESCRIPTION": "Add a *Neutralize+ and *Beam *Cell+ with Exhaust and Ethereal to your hand."
+  },
+
+  "${ModID}:ALittlePrayer": {
+    "NAME": "A Little Prayer",
+    "DESCRIPTION": "Choose 1 of !M! *Silent cards to add to your hand. It costs 0 until played. Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Inspired by Rice Shower!"
+    ]
+  },
+
+  "${ModID}:ForeseeVictory": {
+    "NAME": "Foresee Victory",
+    "DESCRIPTION": "Choose 1 of !M! *Watcher cards to add to your hand. It costs 0 until played. Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Inspired by Matikanefukukitaru!"
+    ]
+  },
+
+  "${ModID}:NotCyborg": {
+    "NAME": "I'm Not a Cyborg",
+    "DESCRIPTION": "Choose 1 of !M! *Defect cards to add to your hand. It costs 0 until played. Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Inspired by Mihono Bourbon!"
+    ]
+  },
+
+  "${ModID}:LegacyOfTheStrong": {
+    "NAME": "Legacy of the Strong",
+    "DESCRIPTION": "Choose 1 of !M! *Ironclad cards to add to your hand. It costs 0 until played. Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Inspired by Mejiro McQueen!"
+    ]
+  },
+
+  "${ModID}:AnythingButTraining": {
+    "NAME": "Slack Off",
+    "DESCRIPTION": "Heal !M! HP. NL Gain [E] [E]. Shuffle a copy of *Slacker into your draw pile. Exhaust."
+  },
+
+  "${ModID}:Bakushin": {
+    "NAME": "BAKUSHIN!",
+    "DESCRIPTION": "Gain [E]. NL Draw !M! cards. NL Shuffle 2 copies of *Rushed into your draw pile."
+  },
+
+  "${ModID}:BorrowedLegacy": {
+    "NAME": "Borrowed Legacy",
+    "DESCRIPTION": "{@@}Choose to add an *Infernal *Blade{!Upgrades!|>0=+}, *Distraction{!Upgrades!|>0=+}, or *White *Noise{!Upgrades!|>0=+} to your hand. Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Inspired by the Three Goddesses!"
+    ]
+  },
+
+  "${ModID}:BreathOfFreshAir": {
+    "NAME": "Breath of Fresh Air",
+    "DESCRIPTION": "Gain [E]. NL The next time you play a Skill, gain [E] equal to its cost.",
+    "UPGRADE_DESCRIPTION": "Gain [E] [E]. NL The next 2 times you play a Skill, gain [E] equal to its cost."
+  },
+
+
+  "${ModID}:CertainVictory": {
+    "NAME": "Certain Victory",
+    "DESCRIPTION": "When an enemy dies, gain !M! Vigor and draw 1 card."
+  },
+
+  "${ModID}:TeioStep": {
+    "NAME": "Teio Step",
+    "DESCRIPTION": "Deal !D! damage. NL Whenever you draw a card this turn, the enemy loses !M! HP."
+  },
+
+  "${ModID}:Yada": {
+    "NAME": "YADA!!!",
+    "DESCRIPTION": "{@@}Deal !D! damage to a random enemy !M! time{!M!|>1=s}. NL If your umapyoi:Mood is *Awful, permanently increase the number of times by !${ModID}:m2!. Exhaust."
+  },
+
+  "${ModID}:Groundwork": {
+    "NAME": "Groundwork",
+    "DESCRIPTION": "Gain !M! Strength. NL Increase gain by 1 for every card created while this is in your hand.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Gain !M! Strength. NL Increase gain by 1 for every card created while this is in your hand.",
+    "FLAVOR": "Groundwork ahead? Yeah, I sure hope it does!"
+  },
+
+  "${ModID}:ClawMachine": {
+    "NAME": "Claw Machine",
+    "DESCRIPTION": "Deal !D! damage. NL Improve umapyoi:Mood by 1 rank. NL Increase damage dealt by other *Claw *Machines by !M!. NL Exhaust."
+  },
+
+  "${ModID}:CutAndDrive": {
+    "NAME": "Cut and Drive!",
+    "DESCRIPTION": "Whenever you draw a card this turn, a random enemy takes !M! damage. NL Draw 1 card."
+  },
+
+  "${ModID}:DailyShop": {
+    "NAME": "Daily Shop",
+    "DESCRIPTION": "{@@}Draw cards until their total cost exceeds X{!M!|>0=+!M!}. They cost 0 to play this turn. Exhaust."
+  },
+
+  "${ModID}:DeepBreaths": {
+    "NAME": "Deep Breaths",
+    "DESCRIPTION": "The first time you reach 0 [E] each turn, gain !M! Vigor."
+  },
+
+  "${ModID}:BlazingPride": {
+    "NAME": "Blazing Pride",
+    "DESCRIPTION": "Gain !M! Vigor whenever a card is exhausted."
+  },
+
+  "${ModID}:ExerciseTheRight": {
+    "NAME": "Exercise the Right",
+    "DESCRIPTION": "Shuffle !M! copies of the next card you play into the draw pile, then exhaust it. NL Exhaust."
+  },
+
+  "${ModID}:IronWill": {
+    "NAME": "Iron Will",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! umapyoi:Blur. NL Gain !M! [E] next turn. NL End your turn."
+  },
+
+  "${ModID}:LastSpurt": {
+    "NAME": "Last Spurt",
+    "DESCRIPTION": "Draw 2X cards. NL The first attack you draw costs 0 until played.",
+    "UPGRADE_DESCRIPTION": "Draw 2X cards. NL The first 2 attacks you draw costs 0 until played."
+  },
+
+  "${ModID}:LoneUma": {
+    "NAME": "Lone Uma",
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Add a copy of *Lone *Uma{!Upgrades!|>0=+} to the discard pile. When drawn, increase the cost this turn by the number of *Lone *Uma you have minus 1. umapyoi:Sorrow: Exhaust."
+  },
+
+  "${ModID}:PetrifyingGaze": {
+    "NAME": "Petrifying Gaze",
+    "DESCRIPTION": "{@@}Choose to add an *Intimidate{!Upgrades!|>0=+}, *Terror{!Upgrades!|>0=+}, or *Shockwave{!Upgrades!|>0=+} to your hand. Exhaust. umapyoi:Sorrow: This doesn't exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Inspired by Nice Nature!"
+    ]
+  },
+
+  "${ModID}:Donuts": {
+    "NAME": "Donuts",
+    "DESCRIPTION": "Heal !M! HP. NL Shuffle 2 copies of *Slow *Metabolism into the draw pile. Exhaust.",
+    "FLAVOR": "Donu is in shambles."
+  },
+
+  "${ModID}:ProteinShake": {
+    "NAME": "Protein Shake",
+    "DESCRIPTION": "Gain !B! Block. NL When exhausted, gain !M! Strength and shuffle a copy with 1 less Strength into the draw pile. Doesn't copy at 0 Strength."
+  },
+
+  "${ModID}:Recreation": {
+    "NAME": "Recreation",
+    "DESCRIPTION": "{@@}Gain !M! [E]. NL Improve umapyoi:Mood by !${ModID}:m2! rank{!${ModID}:m2!|>1=s}. NL Exhaust."
+  },
+
+  "${ModID}:RedAce": {
+    "NAME": "Red Ace",
+    "DESCRIPTION": "Next turn, gain !M! Vigor for every card drawn this turn."
+  },
+
+  "${ModID}:RestDay": {
+    "NAME": "Rest Day",
+    "DESCRIPTION": "Gain !M! [E]. NL Add a *Night *Owl to the discard pile."
+  },
+
+  "${ModID}:ScrambleZone": {
+    "NAME": "Scramble Zone",
+    "DESCRIPTION": "Gain !B! Block. NL Improve or Worsen your umapyoi:Mood by 1 rank.",
+    "EXTENDED_DESCRIPTION": [
+      "Mood Up",
+      "Improve your umapyoi:Mood by 1 rank.",
+      "Mood Down",
+      "Worsen your umapyoi:Mood by 1 rank."
+    ]
+  },
+
+  "${ModID}:ShakeItOut": {
+    "NAME": "Shake It Out",
+    "DESCRIPTION": "Retain. Gain !B! Block. NL Increase gain by !M! for every card created while this is in your hand."
+  },
+
+  "${ModID}:TailHeldHigh": {
+    "NAME": "Tail Held High",
+    "DESCRIPTION": "Retain. Deal !D! damage. NL Increase damage by !M! for every card created while this is in your hand."
+  },
+
+  "${ModID}:ProfessorOfCurvature": {
+    "NAME": "Prof. Curvature",
+    "DESCRIPTION": "When an Attack card is created, it gains !M! extra damage.",
+    "FLAVOR": "HARIKITTE IKOU!"
+  },
+
+  "${ModID}:SharpGaze": {
+    "NAME": "Sharp Gaze",
+    "DESCRIPTION": "For each copy of *Sharp *Gaze you have, deal !D! damage to a random enemy and randomly apply !M! Vulnerable, !M! Weak, or !M! Poison. Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      " (You have ",
+      " copy of Sharp Gaze.)",
+      " copies of Sharp Gaze.)"
+    ]
+  },
+
+  "${ModID}:SignalNew": {
+    "NAME": "Hajimari no Signal",
+    "DESCRIPTION": "{@@}Choose to add a *Carve *Reality{!Upgrades!|>0=+}, *Deceive *Reality{!Upgrades!|>0=+}, or *Evaluate{!Upgrades!|>0=+} with Exhaust to your hand.",
+    "EXTENDED_DESCRIPTION": [
+      "Inspired by Mejiro McQueen!"
+    ]
+  },
+
+  "${ModID}:StonePiercingBlue": {
+    "NAME": "Stonepiercing Blue",
+    "DESCRIPTION": "Deal !D! damage. NL umapyoi:Sorrow: Add a *Trick and *Tether with Exhaust to your hand.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add a *Trick and *Tether with Exhaust to your hand."
+  },
+
+  "${ModID}:SuperDuperClimax": {
+    "NAME": "Super Duper Climax!",
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust. NL When exhausted, add a copy of this card with its cost reduced by 1 to the draw pile."
+  },
+
+  "${ModID}:SwingingMaestro": {
+    "NAME": "Swinging Maestro",
+    "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL Your next Attack costs 0 to play."
+  },
+
+  "${ModID}:DutyOfDignity": {
+    "NAME": "Duty of Dignity",
+    "DESCRIPTION": "Gain !M! Vigor whenever you draw an Unplayable card."
+  },
+
+  "${ModID}:Secretary": {
+    "NAME": "The Secretary",
+    "DESCRIPTION": "All Attack cards in your hand gain extra damage equal to !M! times its cost this combat."
+  },
+
+  "${ModID}:LeadView": {
+    "NAME": "View from the Lead",
+    "DESCRIPTION": "Deal !D! damage. NL  Draw 1 card. NL Repeat until there are more *Uma cards than umapyoi:non-Uma cards or until your hand is full."
+  },
+
+  "${ModID}:RadarAlert": {
+    "NAME": "RADAR ALERT!",
+    "DESCRIPTION": "{@@}Choose to add a *Dropkick{!Upgrades!|>0=+}, *Wheel *Kick{!Upgrades!|>0=+}, or *Golshi *Kick{!Upgrades!|>0=+} with Exhaust to your hand. If an enemy intends to attack, it costs 0 until played.",
+    "EXTENDED_DESCRIPTION": ["Inspired by myself!",
+      "RADAR ALERT! RADAR ALERT!",
+      "That enemy does not intend to attack!"]
+  },
+
+  "${ModID}:TrainingRestricted": {
+    "NAME": "Restrict Training",
+    "DESCRIPTION": "Gain !M! [E]. NL Improve umapyoi:Mood by 2 ranks. Gain a random action-restricting debuff.",
+    "EXTENDED_DESCRIPTION": ["My legs are still sore from yesterday's race...",
+      "I'm not getting into the water!",
+      "My arms! My poor, poor arms!",
+      "Guts isn't meta on Global yet!",
+      "Studying is boring, I'd rather run!"
+    ]
+  },
+
+  "${ModID}:Yakisoba": {
+    "NAME": "Yakisoba",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! umapyoi:Blur. NL Add a copy of *Slow *Metabolism to your hand."
+  },
+
+  "${ModID}:WinQED": {
+    "NAME": "Win QED",
+    "DESCRIPTION": "Choose to add a *Calculated *Gamble+, *Expertise, or *Skim to your hand. Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Inspired by Biwa Hayahide!"
+    ]
+  },
+
+  "${ModID}:LookAtCurren": {
+    "NAME": "#LookAtCurren",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. Exhaust. NL umapyoi:Joy: Add 2 copies of this card to the discard pile."
+  },
+
+  "${ModID}:AnchorsAweigh": {
+    "NAME": "Anchors Aweigh!",
+    "DESCRIPTION": "Apply !M! Weak and Vulnerable. Shuffle 3 *Late *Starts into your draw pile. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Remove the enemy's Artifact, then apply !M! Weak and Vulnerable. Shuffle 3 *Late *Starts into your draw pile. Exhaust."
+  },
+
+  "${ModID}:CallMeKing": {
+    "NAME": "Call Me King!",
+    "DESCRIPTION": "Deal !D! damage. NL Draw 1 card. NL Add !${ModID}:m2! copies of this card to your discard pile. Exhaust. NL This deals !M! more damage for each copy of *Call *Me *King in the Exhaust pile."
+  },
+
+  "${ModID}:HowHungry": {
+    "NAME": "How Hungry...",
+    "DESCRIPTION": "Gain !M! Regen. NL Gain 2 [E]. NL Add a copy of *Slow *Metabolism to the top of your draw pile. Exhaust."
+  },
+
+  "${ModID}:DirectorTracen": {
+    "NAME": "Director of Tracen",
+    "DESCRIPTION": "Choose to add a *Wish, *Omniscience, or *Lesson *Learned to your hand, and reduce its cost by 1 this turn. Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Inspired by Northern---I mean Yayoi Akikawa!"
+    ]
+  },
+
+  "${ModID}:Dominator": {
+    "NAME": "Dominator",
+    "DESCRIPTION": "Deal !D! damage. NL The enemy can't gain Strength for !M! turns. Exhaust."
+  },
+
+  "${ModID}:DivineMight": {
+    "NAME": "Divine Might",
+    "DESCRIPTION": "Each turn, after playing 3 cards, draw !M! cards and gain !${ModID}:m2! [E]."
+  },
+
+  "${ModID}:ExtraTank": {
+    "NAME": "Extra Tank",
+    "DESCRIPTION": "Copy the first card you exhaust each turn into the discard pile.",
+    "UPGRADE_DESCRIPTION": "Copy the first non-Curse, non-Status card you exhaust each turn into the discard pile."
+  },
+
+  "${ModID}:GDoubleZero": {
+    "NAME": "G00 1st.",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Vigor. NL When exhausted, permanently increase Vigor gained by !${ModID}:m2!."
+  },
+
+  "${ModID}:ShootingStar": {
+    "NAME": "Shooting Star",
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust a card. NL If it was a umapyoi:non-Uma card, permanently increase the damage by !M!."
+  },
+
+  "${ModID}:SparklingStardom": {
+    "NAME": "Sparkling Stardom",
+    "DESCRIPTION": "Ethereal. Negate all incoming damage this turn and convert half of all incoming damage to Vigor. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Negate all incoming damage this turn and convert half of all incoming damage to Vigor. Exhaust."
+  },
+
+  "${ModID}:Gourmand": {
+    "NAME": "Gourmand",
+    "DESCRIPTION": "Exhaust a card. NL Recover HP equal to !M! times its cost and improve umapyoi:Mood by 1 rank. Exhaust."
+  },
+
+  "${ModID}:HugeLead": {
+    "NAME": "Huge Lead",
+    "DESCRIPTION": "{@@}Choose to add a *Doppelganger{!Upgrades!|>0=+}, *Scrawl{!Upgrades!|>0=+}, or *All *For *One{!Upgrades!|>0=+} to your hand. Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Inspired by Sakura Bakushin O!"
+    ]
+  },
+
+  "${ModID}:ALittleFurther": {
+    "NAME": "A Little Further",
+    "DESCRIPTION": "Ethereal. If you would die, heal to !M! % of your Max HP and remove NL 1 copy of *A *Little *Further from your deck instead.",
+    "UPGRADE_DESCRIPTION": "If you would die, heal to !M! % of your Max HP and remove NL 1 copy of *A *Little *Further from your deck instead."
+  },
+
+  "${ModID}:Infirmary": {
+    "NAME": "Infirmary",
+    "DESCRIPTION": "Gain !M! [E] when you exhaust a Status or a Curse."
+  },
+
+  "${ModID}:PracticePerfect": {
+    "NAME": "Practice Perfect",
+    "DESCRIPTION": "Starting your turn in Awful umapyoi:Mood no longer reduces [E].",
+    "UPGRADE_DESCRIPTION": "Innate. NL Starting your turn in Awful umapyoi:Mood no longer reduces [E]."
+  },
+
+  "${ModID}:UmapyoiForm": {
+    "NAME": "Umapyoi Form",
+    "DESCRIPTION": "Ethereal. At the start of your turn, randomly add an Ethereal copy of *Exhume, *Nightmare, *Seek, or *Scrawl to your hand.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, randomly add an Ethereal copy of *Exhume, *Nightmare, *Seek, or *Scrawl to your hand."
+  },
+
+  "${ModID}:TicketToWin": {
+    "NAME": "Ticket to Win",
+    "DESCRIPTION": "Whenever you draw a card, ALL enemies take !M! damage."
+  },
+
+  "${ModID}:LegaciesLiveOn": {
+    "NAME": "Legacies Live On!",
+    "DESCRIPTION": "Choose 1 of !M! rare cards NOT from your current character to permanently add to your deck, and add a copy to your hand. stslib:Fleeting.",
+    "EXTENDED_DESCRIPTION": [
+      "Eclipse First, the Rest Nowhere."
+    ]
+  },
+
+  "${ModID}:LuckySeven": {
+    "NAME": "Lucky Seven",
+    "DESCRIPTION": "Add a *Triple *Sevens to your hand. Exhaust. Whenever a card is created while this is in your hand, reduce the cost by 1.",
+    "UPGRADE_DESCRIPTION": "Retain. Add a *Triple *Sevens+ to your hand. Exhaust. Whenever a card is created while this is in your hand, reduce the cost by 1."
+  },
+
+  "${ModID}:TripleSevens": {
+    "NAME": "Triple Sevens",
+    "DESCRIPTION": "{@@}Deal !D! damage !M! times. NL Add a *Lucky *Seven{!Upgrades!|>0=+} to your hand. stslib:Purge."
+  },
+
+  "${ModID}:RaffleTime": {
+    "NAME": "Raffle Time!",
+    "DESCRIPTION": "Add a random *raffle *prize to your hand. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add a random *raffle *prize to your hand. Exhaust. NL (Ticket has been blessed, so you never lose!)"
+  },
+
+  "${ModID}:Carrot": {
+    "NAME": "Carrot (3rd)",
+    "DESCRIPTION": "Gain !M! [E]. Exhaust."
+  },
+
+  "${ModID}:CarrotBushel": {
+    "NAME": "Carrot Bushel (2nd)",
+    "DESCRIPTION": "Improve umapyoi:Mood by 1 rank. Gain !M! [E] and NL !M! Strength. Exhaust."
+  },
+
+  "${ModID}:CarrotHamburg": {
+    "NAME": "Carrot Hamburg (1st)",
+    "DESCRIPTION": "Improve umapyoi:Mood by 1 rank. Gain !M! [E] , !M! Strength, and NL !M! Dexterity. Exhaust."
+  },
+
+  "${ModID}:HotSpringTicket": {
+    "NAME": "Hot Spring Ticket",
+    "DESCRIPTION": "(You won the jackpot!) NL Unplayable. Retain. NL If in hand at the end of combat, gain !M! Max HP.",
+    "EXTENDED_DESCRIPTION": [
+      "I need to win first!"
+    ]
+  },
+
+  "${ModID}:ConsolationPrize": {
+    "NAME": "Consolation Prize",
+    "DESCRIPTION": "(Better luck next time!) NL Unplayable. Ethereal. When exhausted, worsen umapyoi:Mood by 1 rank."
+  },
+
+  "${ModID}:MystifyingMurmur": {
+    "NAME": "Mystifying Murmur",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies, then reduce their Strength by !M!. Exhaust. umapyoi:Sorrow: Copy this card to the discard pile."
+  },
+
+  "${ModID}:RedShift": {
+    "NAME": "Red Shift/LP1211-M",
+    "DESCRIPTION": "Draw cards until your hand is full. Add Burns equal to the amount drawn to the discard pile."
+  },
+
+  "${ModID}:SummerVacation": {
+    "NAME": "Summer Vacation",
+    "DESCRIPTION": "Improve umapyoi:Mood by 1 rank. Your next card this turn is played twice. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Set umapyoi:Mood to Great. Your next !M! cards this turn is played twice. Exhaust."
+  },
+
+  "${ModID}:ForVittoria": {
+    "NAME": "For Vittoria!",
+    "DESCRIPTION": "Draw !M! cards. For each umapyoi:non-Uma card drawn, gain !${ModID}:m2! Strength."
+  },
+
+  "${ModID}:UMaTwo": {
+    "NAME": "U=Ma^2",
+    "DESCRIPTION": "Exhaust ALL cards in your hand. For every 2 cards exhausted, gain 1 Artifact. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Exhaust ALL cards in your hand. For each card exhausted, gain 1 Artifact. Exhaust."
   },
 
   "${ModID}:LateStartStatus": {
@@ -129,7 +659,7 @@
 
   "${ModID}:NightOwlStatus": {
     "NAME": "Night Owl",
-    "DESCRIPTION": "Retain. When retained, a random card in your hand costs 1 more [E] to play this combat. Exhaust."
+    "DESCRIPTION": "Retain. NL When retained, a random card in your draw pile costs 1 more [E] to play this combat. Exhaust."
   },
 
   "${ModID}:RushedStatus": {
@@ -139,70 +669,31 @@
 
   "${ModID}:SlackerStatus": {
     "NAME": "Slacker",
-    "DESCRIPTION": "Unplayable. Ethereal. Whenever this card is drawn, gain [E], worsen your umapyoi:Mood by 1 rank, and lose 1 Strength."
+    "DESCRIPTION": "Unplayable. Ethereal. Whenever this card is drawn, worsen umapyoi:Mood by 1 rank, lose 1 Strength, and gain [E]."
   },
 
   "${ModID}:SlowMetabolismStatus": {
     "NAME": "Slow Metabolism",
-    "DESCRIPTION": "Unplayable. At the end of your turn, lose !M! Dexterity and gain !${ModID}:m2! Strength.}"
+    "DESCRIPTION": "Unplayable. NL At the end of your turn, lose !M! Dexterity and gain !${ModID}:m2! Strength."
   },
 
   "${ModID}:LegFractureCurse": {
     "NAME": "Fractured Leg",
-    "DESCRIPTION": "Innate. Unplayable. Retain. When Retained, worsen your umapyoi:Mood by 1 Rank. When exhausted, add a *Migraine, *Skin *Outbreak, and *Practice *Poor to the top of your draw pile."
+    "DESCRIPTION": "Innate. Unplayable. Retain. stslib:Soulbound. When Retained, worsen umapyoi:Mood by 1 rank. NL When exhausted, add a *Migraine, *Skin *Outbreak, and *Practice *Poor to the top of your draw pile."
   },
 
-  "${ModID}:ExampleTwoAmountPowerCard": {
-    "NAME": "Two Amount Power",
-    "DESCRIPTION": "At the start of your turn, gain !M! Strength and !${ModID}:m2! Dexterity."
+  "${ModID}:SkinOutbreakCurse": {
+    "NAME": "Skin Outbreak",
+    "DESCRIPTION": "Unplayable. At the end of your turn, worsen umapyoi:Mood by 1 rank and add 1 Burn to the discard pile."
   },
-  "${ModID}:InlinePowerDemo": {
-    "NAME": "Inline Power",
-    "DESCRIPTION": "Strikes deal !M! more damage. NL At the end of your turn, gain !M! Block.",
-    "EXTENDED_DESCRIPTION": [
-      "Strike+, Block+",
-      "#yStrikes deal #b",
-      " additional damage. At the end of your turn, gain #b",
-      " #yBlock."
-    ]
+
+  "${ModID}:PracticePoorCurse": {
+    "NAME": "Practice Poor",
+    "DESCRIPTION": "Unplayable. Ethereal. When this card is exhausted, worsen umapyoi:Mood by 1 rank and shuffle 2 Dazed into your draw pile."
   },
-  "${ModID}:SelectCardsPlusCardMods": {
-    "NAME": "Cool Card Stuff",
-    "DESCRIPTION": "Choose from 1 of 3 cost 0 cards from any class. NL Add it into your hand. NL It gains Ethereal and Exhaust.",
-    "EXTENDED_DESCRIPTION": [
-      "Choose a card to add into your hand with Ethereal and Exhaust."
-    ]
-  },
-  "${ModID}:EasyXCostDemo": {
-    "NAME": "Easy X Cost",
-    "DESCRIPTION": "{@@}Deal !D! damage X{!M!|>0=+!M!} times. NL Gain X{!M!|>0=+!M!} Strength. NL Exhaust."
-  },
-  "${ModID}:EasyModalChoiceDemo": {
-    "NAME": "Easy Modal Choice",
-    "DESCRIPTION": "Choose one: Draw !M! cards or gain !${ModID}:m2! Strength.",
-    "EXTENDED_DESCRIPTION": [
-      "Draw",
-      "Draw ",
-      " cards.",
-      "Strength",
-      "Gain ",
-      " Strength."
-    ]
-  },
-  "${ModID}:DrawAndShiv": {
-    "NAME": "Draw and Shiv",
-    "DESCRIPTION": "Draw 1 card. NL Add 1 *Shiv into your hand."
-  },
-  "${ModID}:TwoTypesOfDamage": {
-    "NAME": "Two Damage Values",
-    "DESCRIPTION": "Deal !D! damage. NL If you're Vulnerable, deal !${ModID}:sd! damage instead."
-  },
-  "${ModID}:StartupBlockCard": {
-    "NAME": "Startup And AOE",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Startup: Gain !M! Block."
-  },
-  "${ModID}:MultiCardPreviewAndDrawCallback": {
-    "NAME": "Previews and Callbacks",
-    "DESCRIPTION": "{@@}Shuffle *Smite{!Upgrades!|>0=+} and *Safety{!Upgrades!|>0=+} into your draw pile. NL Draw 1 card. NL If it's Colorless, deal !D! damage to ALL enemies."
+
+  "${ModID}:MigraineCurse": {
+    "NAME": "Migraine",
+    "DESCRIPTION": "Unplayable. At the end of your turn, worsen umapyoi:Mood by 2 ranks."
   }
 }

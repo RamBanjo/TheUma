@@ -22,7 +22,12 @@ public class FickleMaidenCard extends AbstractEasyCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-        applyToSelf(new FickleMaidenPower(p, 1));
+    }
+
+
+    @Override
+    public void triggerOnExhaust() {
+        applyToSelf(new FickleMaidenPower(adp(), 1));
     }
 
     public void upp() {

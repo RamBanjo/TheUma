@@ -43,6 +43,10 @@ public class PickCardsFromListAction extends AbstractGameAction {
         addUpgradedCards = addUpgraded;
     }
 
+    public PickCardsFromListAction(ArrayList<AbstractCard> cardsList, int sampleAmt, String myText, int newDiscount, boolean addUpgraded){
+        this(cardsList, sampleAmt, myText, newDiscount, addUpgraded, null);
+    }
+
     @Override
     public void update() {
         ArrayList<AbstractCard> myCardsList = new ArrayList<>();
@@ -63,19 +67,19 @@ public class PickCardsFromListAction extends AbstractGameAction {
                 }
             }
 
+            if(addUpgradedCards){
+                eligibleCardsList.forEach(AbstractCard::upgrade);
+            }
+
             if (discount != 0){
                 if (discount == -1){
-                    eligibleCardsList.get(i).setCostForTurn(0);
+                    eligibleCardsList.get(i).freeToPlayOnce = true;
                 }else{
 
                     int newCost = eligibleCardsList.get(i).costForTurn - discount;
                     eligibleCardsList.get(i).setCostForTurn(Math.max(newCost, 0));
 
                 }
-            }
-
-            if (addUpgradedCards){
-                eligibleCardsList.get(i).upgrade();
             }
 
             myCardsList.add(eligibleCardsList.get(i));

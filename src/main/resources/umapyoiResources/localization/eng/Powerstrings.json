@@ -1,12 +1,4 @@
 {
-  "${ModID}:ExampleTwoAmountPower": {
-    "NAME": "Example 2",
-    "DESCRIPTIONS": [
-      "At the start of your turn, gain #b",
-      " #yStrength and #b",
-      " #yDexterity."
-    ]
-  },
   "${ModID}:UmaMood": {
   "NAME": "Mood",
   "DESCRIPTIONS": ["Your current mood is #y",
@@ -29,9 +21,199 @@
     " #yVigor next turn."]
   },
 
-  "${ModID}:FickleMaiden": {
+  "${ModID}:FickleMaidenPower": {
     "NAME": "Fickle Maiden",
     "DESCRIPTIONS": [
-      "The next time your #yMood changes, return all copies of #yFickle #yMaiden from the Exhaust pile to your hand. If your hand is full, the excess goes to your discard."]
+      "The next time your #yMood changes from #b",
+      " [REMOVE_SPACE], return all copies of #yFickle #yMaiden from the Exhaust pile to your hand. If your hand is full, the excess goes to your discard. (You have exhausted #b",
+      " copy of #yFickle #yMaiden [REMOVE_SPACE]).",
+      " copies of #yFickle #yMaiden [REMOVE_SPACE])."]
+  },
+
+  "${ModID}:PreparedToPassPower": {
+    "NAME": "Prepared to Pass",
+    "DESCRIPTIONS": [
+      "Whenever you are attacked this turn, gain #b",
+      " #yVigor."]
+  },
+
+  "${ModID}:SkillRefundPower": {
+    "NAME": "Skill Refund",
+    "DESCRIPTIONS": [
+      "The next time you play a Skill, gain Energy equal to its cost.",
+      "The next #b",
+      " times you play a Skill, gain Energy equal to its cost."]
+  },
+
+  "${ModID}:CertainVictoryPower": {
+    "NAME": "Certain Victory",
+    "DESCRIPTIONS": [
+      "When an enemy dies, gain #b",
+      " #yVigor and draw #b1 card."]
+  },
+
+  "${ModID}:TeioStepPower": {
+    "NAME": "Teio Step",
+    "DESCRIPTIONS": [
+      "Whenever you draw a card this turn, loses #b",
+      " HP."]
+  },
+
+  "${ModID}:CutAndDrivePower": {
+    "NAME": "Cut and Drive!",
+    "DESCRIPTIONS": [
+      "Whenever you draw a card this turn, a random enemy loses #b",
+      " HP."]
+  },
+
+  "${ModID}:DeepBreathsPower": {
+    "NAME": "Deep Breaths",
+    "DESCRIPTIONS": [
+      "The first time you reach 0 Energy each turn, gain #b",
+      " #yVigor.",
+      " #yVigor. (Already triggered this turn!)"]
+  },
+
+  "${ModID}:EmpressPridePower": {
+    "NAME": "Blazing Pride",
+    "DESCRIPTIONS": [
+      "Gain #b",
+    " #yVigor whenever a card is exhausted."]
+  },
+
+  "${ModID}:ExerciseTheRightPower": {
+    "NAME": "Exercise the Right",
+    "DESCRIPTIONS": [
+      "Create a copy of the next card you play, then exhaust it.",
+      "Create #b",
+      " copies of the next card you play, then exhaust it."]
+  },
+
+  "${ModID}:HarikittePower": {
+    "NAME": "HARIKITTE IKOU!",
+    "DESCRIPTIONS": [
+      "When an #yAttack card is created, it gains #b",
+      " extra damage."]
+  },
+
+  "${ModID}:RedAcePower": {
+    "NAME": "Resplendent Red Ace",
+    "DESCRIPTIONS": [
+      "Whenever you draw a card this turn, gain #b",
+    " #yLate #ySurge [REMOVE_SPACE]."]
+  },
+
+  "${ModID}:DutyPower": {
+    "NAME": "The Duty of Dignity Calls",
+    "DESCRIPTIONS": [
+      "Whenever you draw an #yUnplayable card, gain #b",
+      " #yVigor [REMOVE_SPACE]."]
+  },
+
+  "${ModID}:NoGainsPower": {
+    "NAME": "No Gains",
+    "DESCRIPTIONS": [
+      "Cannot gain #yStrength and #yDexterity for #b",
+      " turn.",
+      " turns."]
+  },
+
+  "${ModID}:WitlessPower": {
+    "NAME": "Witless",
+    "DESCRIPTIONS": [
+      "Cannot play #yPower cards for #b",
+      " turn.",
+      " turns."]
+  },
+
+  "${ModID}:EntangledAmount": {
+    "NAME": "Entangle",
+    "DESCRIPTIONS": [
+      "Cannot play #yAttack cards for #b",
+      " turn.",
+      " turns."]
+  },
+  "${ModID}:EmperorsDivinityPower": {
+    "NAME": "Thine Emperor's Divinity",
+    "DESCRIPTIONS": [
+      "Each turn, after playing #b3 cards, gain #b",
+      " Energy.",
+      " Energy. (Already triggered this turn!)"
+    ]
+  },
+  "${ModID}:EmperorsMightPower": {
+    "NAME": "Thine Emperor's Might",
+    "DESCRIPTIONS": [
+      "Each turn, after playing #b3 cards, draw #b",
+      " card.",
+      " cards.",
+      " (Already triggered this turn!)"
+    ]
+  },
+  "${ModID}:AgemasenPower": {
+    "NAME": "AGEMASEN!",
+    "DESCRIPTIONS": [
+      "Copy the first card you exhaust each turn to the discard pile.",
+      "Copy the first card you exhaust each turn to the discard pile #b",
+      " times.",
+      " (Already triggered this turn!)"
+    ]
+  },
+
+  "${ModID}:AgemasenPlusPower": {
+    "NAME": "AGEMASEN!+",
+    "DESCRIPTIONS": [
+      "Copy the first non-Curse, non-Status card you exhaust each turn to the discard pile.",
+      "Copy the first non-Curse, non-Status card you exhaust each turn to the discard pile #b",
+      " times.",
+      " (Already triggered this turn!)"
+    ]
+  },
+
+  "${ModID}:UmadolPower": {
+    "NAME": "Umadol",
+    "DESCRIPTIONS": [
+      "Convert all incoming damage to #yVigor this turn.",
+      "Convert all incoming damage to #Vigor for #b",
+      " turns."
+    ]
+  },
+
+  "${ModID}:HorsepitalPower": {
+    "NAME": "Horsepital",
+    "DESCRIPTIONS": [
+      "Gain #b",
+      " Energy when a #rStatus or a #rCurse is exhausted."
+    ]
+  },
+
+  "${ModID}:PracticePerfectPower": {
+    "NAME": "Practice Perfect",
+    "DESCRIPTIONS": [
+      "Starting your turn in #bAwful #yMood no longer reduces Energy."
+    ]
+  },
+
+  "${ModID}:UmapyoiPower": {
+    "NAME": "Umapyoi!",
+    "DESCRIPTIONS": [
+      "At the start of your turn, randomly add an #yEthereal copy of #yExhume [REMOVE_SPACE], #yNightmare [REMOVE_SPACE], #ySeek [REMOVE_SPACE], or #yScrawl to your hand.",
+      "At the start of your turn, randomly add an #yEthereal copy of #yExhume [REMOVE_SPACE], #yNightmare [REMOVE_SPACE], #ySeek [REMOVE_SPACE], or #yScrawl to your hand #b",
+      " times."
+    ]
+  },
+
+  "${ModID}:WinningTicketPower": {
+    "NAME": "Winning Ticket",
+    "DESCRIPTIONS": [
+      "Whenever you draw a card, ALL enemies take #b",
+      " damage."]
+  },
+
+  "${ModID}:WinSometimesPower": {
+    "NAME": "I Can Win Sometimes!",
+    "DESCRIPTIONS": [
+      "Prevents death once and heal to #b",
+      "% of your Max HP, then remove a copy of #yA #yLittle #yFurther from your deck instead."]
   }
 }

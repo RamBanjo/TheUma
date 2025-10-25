@@ -1,5 +1,6 @@
 package theuma.cards.curses;
 
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.cards.status.Burn;
@@ -18,7 +19,7 @@ public class SkinOutbreakCurse extends AbstractEasyCard {
     // intellij stuff STATUS, SELF, COMMON, 0, 0, 0, 0, 0, 0
 
     public SkinOutbreakCurse() {
-        super(ID, -2, CardType.CURSE, CardRarity.COMMON, CardTarget.NONE, CardColor.COLORLESS);
+        super(ID, -2, CardType.CURSE, CardRarity.COMMON, CardTarget.NONE, CardColor.CURSE);
 
         this.cardsToPreview = new Burn();
     }
@@ -27,7 +28,7 @@ public class SkinOutbreakCurse extends AbstractEasyCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (this.dontTriggerOnUseCard) {
             applyToSelf(new UmaMoodPower(AbstractDungeon.player, -1));
-            atb(new MakeTempCardInDrawPileAction(new Burn(), 1, true, true, false));
+            atb(new MakeTempCardInDiscardAction(new Burn(), 1));
         }
 
     }
@@ -37,10 +38,12 @@ public class SkinOutbreakCurse extends AbstractEasyCard {
         AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
     }
 
+    @Override
+    public boolean canUpgrade() {
+        return false;
+    }
+
     public void upp() {
-//        upgradeDamage(0);
-//        upgradeBlock(0);
-//        upgradeMagicNumber(0);
-//        upgradeBaseCost(-2);
+
     }
 }

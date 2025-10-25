@@ -19,7 +19,7 @@ public class PracticePoorCurse extends AbstractEasyCard {
     // intellij stuff STATUS, SELF, COMMON, 0, 0, 0, 0, 0, 0
 
     public PracticePoorCurse() {
-        super(ID, -2, CardType.CURSE, CardRarity.COMMON, CardTarget.NONE, CardColor.COLORLESS);
+        super(ID, -2, CardType.CURSE, CardRarity.COMMON, CardTarget.NONE, CardColor.CURSE);
         this.isEthereal = true;
         this.cardsToPreview = new Dazed();
     }
@@ -31,13 +31,16 @@ public class PracticePoorCurse extends AbstractEasyCard {
 
     @Override
     public void triggerOnExhaust(){
+        applyToSelf(new UmaMoodPower(AbstractDungeon.player, -1));
         atb(new MakeTempCardInDrawPileAction(new Dazed(), 2, true, true, false));
     }
 
+    @Override
+    public boolean canUpgrade() {
+        return false;
+    }
+
     public void upp() {
-//        upgradeDamage(0);
-//        upgradeBlock(0);
-//        upgradeMagicNumber(0);
-//        upgradeBaseCost(-2);
+
     }
 }

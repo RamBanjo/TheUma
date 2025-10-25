@@ -7,15 +7,14 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import theuma.util.ProAudio;
 
 import static theuma.ModFile.makeID;
+import static theuma.util.Wiz.playAudio;
 
 public class GolshiKick extends AbstractEasyCard {
     public final static String ID = makeID("GolshiKick");
     // intellij stuff , , , 4, , , , 2, 3
-
-
-    private final int FIXED_MAGIC = 3;
 
     public GolshiKick() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
@@ -24,15 +23,20 @@ public class GolshiKick extends AbstractEasyCard {
         baseSecondMagic = secondMagic = 1;
     }
 
-    private boolean cardConditional(){
-        return AbstractDungeon.actionManager.cardsPlayedThisTurn.size() - 1 >= magicNumber;
+    private boolean cardConditional(boolean onUse){
+
+        //since on use needs to not count the current card
+        int excludeCurrentCard = onUse ? 1 : 0;
+
+        return AbstractDungeon.actionManager.cardsPlayedThisTurn.size() - excludeCurrentCard >= magicNumber;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
 
-        if (cardConditional()){
+        if (cardConditional(true)){
+            playAudio(ProAudio.GOLSHI_ENDING_1);
             addToBot(new GainEnergyAction(1));
             addToBot(new DrawCardAction(secondMagic));
         }
@@ -42,8 +46,6 @@ public class GolshiKick extends AbstractEasyCard {
     }
 
     public void applyPowers() {
-        int realBaseDamage = this.baseDamage;
-
         int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
 
         super.applyPowers();
@@ -65,7 +67,7 @@ public class GolshiKick extends AbstractEasyCard {
     }
 
     public void triggerOnGlowCheck() {
-        this.glowColor = cardConditional() ? AbstractCard.GOLD_BORDER_GLOW_COLOR : AbstractCard.BLUE_BORDER_GLOW_COLOR;
+        this.glowColor = cardConditional(false) ? AbstractCard.GOLD_BORDER_GLOW_COLOR : AbstractCard.BLUE_BORDER_GLOW_COLOR;
     }
 
 

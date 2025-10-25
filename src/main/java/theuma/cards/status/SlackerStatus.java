@@ -35,10 +35,12 @@ public class SlackerStatus extends AbstractEasyCard {
         applyToSelf(new StrengthPower(AbstractDungeon.player, -1));
     }
 
+    @Override
+    public boolean canUpgrade() {
+        return false;
+    }
+
     public void upp() {
-//        upgradeDamage(0);
-//        upgradeBlock(0);
-//        upgradeMagicNumber(0);
-//        upgradeBaseCost(-2);
+
     }
 }

@@ -30,13 +30,4 @@ public class LateSurgerPower extends AbstractEasyPower {
         this.addToBot(new ApplyPowerAction(this.owner, this.owner, new VigorPower(this.owner, this.amount)));
         this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, ID));
     }
-
-    @Override
-    public void stackPower(int stackAmount) {
-        this.fontScale = 8.0F;
-        this.amount += stackAmount;
-        if (this.amount == 0) {
-            this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, NAME));
-        }
-    }
 }

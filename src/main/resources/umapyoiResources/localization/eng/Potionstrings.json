@@ -1,9 +1,29 @@
 {
-    "${ModID}:DemoPotion": {
-        "NAME": "Awesome Demo Potion",
-        "DESCRIPTIONS": [
-            "Gain #b",
-            " #yStrength."
-        ]
-    }
+  "${ModID}:RoyalBitterJuice": {
+    "NAME": "Royal Bitter Juice",
+    "DESCRIPTIONS": [
+      "Worsen your #yMood by #b",
+      " rank and gain #b",
+      " ranks and gain #b",
+      " Energy."
+    ]
+  },
+  "${ModID}:Parfait": {
+    "NAME": "Parfait in a Jar",
+    "DESCRIPTIONS": [
+      "Set your #yMood to #bGreat and recover #b",
+      "% of your Max HP."
+    ]
+  },
+  "${ModID}:CarrotJuice": {
+    "NAME": "Carrot Juice",
+    "DESCRIPTIONS": [
+      "Draw #b",
+      " card, gain #b",
+      " cards, gain #b",
+      " Energy, and improve #yMood by #b",
+      " rank.",
+      " ranks."
+    ]
+  }
 }

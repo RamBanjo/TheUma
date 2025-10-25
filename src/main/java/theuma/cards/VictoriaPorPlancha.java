@@ -8,6 +8,8 @@ import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPrevie
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.blue.BeamCell;
+import com.megacrit.cardcrawl.cards.green.Neutralize;
 import com.megacrit.cardcrawl.cards.red.Bash;
 import com.megacrit.cardcrawl.cards.red.Clothesline;
 import com.megacrit.cardcrawl.cards.red.Uppercut;
@@ -29,7 +31,7 @@ public class VictoriaPorPlancha extends AbstractEasyCard {
     // intellij stuff skill, self, uncommon
 
     public VictoriaPorPlancha() {
-        super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         MultiCardPreview.add(this, new Bash(), new Clothesline(), new Uppercut());
     }
 
@@ -62,13 +64,12 @@ public class VictoriaPorPlancha extends AbstractEasyCard {
 
         ArrayList<AbstractCardModifier> modifierList = new ArrayList<AbstractCardModifier>();
         modifierList.add(new ExhaustMod());
-        modifierList.add(new EtherealMod());
 
-        atb(new PickCardsFromListAction(cardArrayList, -1, cardStrings.EXTENDED_DESCRIPTION[0], -1, this.upgraded, modifierList));
+        atb(new PickCardsFromListAction(cardArrayList, -1, cardStrings.EXTENDED_DESCRIPTION[0], 0, this.upgraded, modifierList));
     }
 
     @Override
     public void upp() {
-//        upgradeBaseCost(0);
+        MultiCardPreview.multiCardPreview.get(this).forEach(AbstractCard::upgrade);
     }
 }

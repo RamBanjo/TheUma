@@ -7,7 +7,11 @@ public enum ProAudio {
     Then, you can use playAudio(ProAudio.BOING) from Wiz to play it.
     */
 
-    GATES_OPEN,
     GOLSHI_CHEER,
-    TRAINER_DETECTED
+    TRAINER_DETECTED,
+    HERMIT_GUN,
+    HARIKITTE_IKOU,
+    UMAPYOI,
+    GOLSHI_ENDING_1,
+    GOLSHI_ENDING_2
 }

@@ -26,9 +26,9 @@ public class LateSurgerCard extends AbstractEasyCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        atb(new ApplyPowerAction(p, p, new EnergizedPower(p, magicNumber)));
+        applyToSelf(new EnergizedPower(p, magicNumber));
         atb(new WaitAction(Settings.ACTION_DUR_FAST));
-        atb(new ApplyPowerAction(p, p, new LateSurgerPower(p, secondMagic)));
+        applyToSelf(new LateSurgerPower(p, secondMagic));
     }
 
     @Override

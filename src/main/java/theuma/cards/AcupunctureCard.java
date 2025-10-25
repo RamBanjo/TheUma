@@ -31,13 +31,13 @@ public class AcupunctureCard extends AbstractEasyCard {
         atb(new EasyXCostAction(this, (effect, params) -> {
 
             //Get a list of status cards
-            ArrayList<AbstractCard> statusList = getCardsMatchingPredicate(c -> c.type == CardType.STATUS, true);
+            ArrayList<AbstractCard> statusList = getCardsMatchingPredicate(c -> c.type == CardType.STATUS && c.rarity != CardRarity.SPECIAL, true);
 
             for (int i = 0; i < effect; i++){
 
                 //Gain Strength and Dex
-                applyToSelfTop(new StrengthPower(p, magicNumber));
-                applyToSelfTop(new DexterityPower(p, magicNumber));
+                applyToSelfTop(new StrengthPower(p, params[0]));
+                applyToSelfTop(new DexterityPower(p, params[0]));
 
                 //Shuffle the status list so the first card changes
                 Collections.shuffle(statusList);
@@ -47,7 +47,7 @@ public class AcupunctureCard extends AbstractEasyCard {
             }
 
             return true;
-        }));
+        }, magicNumber));
     }
 
     @Override

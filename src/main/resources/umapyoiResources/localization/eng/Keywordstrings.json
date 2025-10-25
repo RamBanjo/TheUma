@@ -1,38 +1,40 @@
 [
   {
-    "PROPER_NAME": "TODO",
-    "NAMES": [
-      "todo",
-      "todos"
-    ],
-    "DESCRIPTION": "TODO: Make your own epic keywords"
-  },
-  {
     "PROPER_NAME": "Non-Uma",
     "NAMES": [
-      "non-Uma"
+      "non uma",
+      "non_uma",
+      "nonuma",
+      "non-uma"
     ],
-    "DESCRIPTION": "Cards that are not native to The Uma, such as cards from other characters, colorless cards, statuses, or curses."
+    "DESCRIPTION": "Cards that are not native to #yThe #yUma, such as cards from other characters, colorless cards, statuses, or curses."
   },
   {
     "PROPER_NAME": "Mood",
     "NAMES": [
       "mood"
     ],
-    "DESCRIPTION": "Your current #yMood affects outgoing damage and Energy gain on turn start.  Awful: #b-2 Damage and #b-1 Energy  Bad: #b-1 Damage  Normal: #b0 Good: #b+1 Damage Great: #b+2 Damage and #b+1 Energy. If you end combat at #bAwful mood, there is a #b1 in #b4 chance a random #yCurse is added to your deck."
+    "DESCRIPTION": "Your current #yMood affects outgoing damage and Energy gain on turn start. At #bAwful #ymood [REMOVE_SPACE], gain #b1 less Energy. At #bGreat #ymood [REMOVE_SPACE], gain #b1 more Energy. If you end combat at #bAwful mood, there is a #b1 in #b4 chance a random #yCurse is added to your deck."
   },
   {
     "PROPER_NAME": "Sorrow",
     "NAMES": [
       "sorrow"
     ],
-    "DESCRIPTION": "Card's effect will activate if your #yMood is negative. (#bBad or #bAwful)"
+    "DESCRIPTION": "This effect will activate if your #yMood is negative. ( [REMOVE_SPACE]#bBad or #bAwful [REMOVE_SPACE])"
   },
   {
     "PROPER_NAME": "Joy",
     "NAMES": [
       "joy"
     ],
-    "DESCRIPTION": "Card's effect will activate if your #yMood is positive. (#bGood or #bGreat)"
+    "DESCRIPTION": "This effect will activate if your #yMood is positive. ( [REMOVE_SPACE]#bGood or #bGreat [REMOVE_SPACE])"
+  },
+  {
+    "PROPER_NAME": "Blur",
+    "NAMES": [
+      "blur"
+    ],
+    "DESCRIPTION": "Block will not be removed at the start of your turn."
   }
 ]

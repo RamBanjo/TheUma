@@ -1,6 +1,8 @@
 package theuma.cards.curses;
 
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.CommonKeywordIconsField;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.SoulboundField;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.cards.red.Bash;
@@ -19,14 +21,17 @@ import static theuma.util.Wiz.atb;
 
 public class LegFractureCurse extends AbstractEasyCard {
     public final static String ID = makeID("LegFractureCurse");
+
     // intellij stuff STATUS, SELF, COMMON, 0, 0, 0, 0, 0, 0
 
     public LegFractureCurse() {
-        super(ID, -2, CardType.CURSE, CardRarity.SPECIAL, CardTarget.NONE, CardColor.COLORLESS);
+        super(ID, -2, CardType.CURSE, CardRarity.SPECIAL, CardTarget.NONE, CardColor.CURSE);
 //        this.isEthereal = true;
         this.selfRetain = true;
         this.isInnate = true;
+        SoulboundField.soulbound.set(this, true);
 
+//        CommonKeywordIconsField.useIcons.set(this, true);
         MultiCardPreview.add(this, new MigraineCurse(), new SkinOutbreakCurse(), new PracticePoorCurse());
     }
 
@@ -45,6 +50,11 @@ public class LegFractureCurse extends AbstractEasyCard {
         atb(new MakeTempCardInDrawPileAction(new MigraineCurse(), 1, false, true, false));
         atb(new MakeTempCardInDrawPileAction(new SkinOutbreakCurse(), 1, false, true, false));
         atb(new MakeTempCardInDrawPileAction(new PracticePoorCurse(), 1, false, true, false));
+    }
+
+    @Override
+    public boolean canUpgrade() {
+        return false;
     }
 
     public void upp() {

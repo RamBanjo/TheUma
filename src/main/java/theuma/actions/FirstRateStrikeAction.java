@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import com.megacrit.cardcrawl.vfx.WallopEffect;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 import com.megacrit.cardcrawl.vfx.combat.ViolentAttackEffect;
+import theuma.util.Wiz;
 
 import static theuma.util.Wiz.applyToSelfTop;
 import static theuma.util.Wiz.att;
@@ -37,12 +38,13 @@ public class FirstRateStrikeAction extends AbstractGameAction {
         } else {
             this.tickDuration();
             if (this.isDone) {
+
                 AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, AttackEffect.BLUNT_HEAVY, false));
                 this.target.damage(this.info);
                 if (this.target.lastDamageTaken > 0) {
                     att(new ApplyPowerAction(this.source, this.source, new VigorPower(this.source, target.lastDamageTaken)));
                     if (this.target.hb != null) {
-                        att(new VFXAction(new ViolentAttackEffect(target.hb.cX, target.hb.cY, Color.GREEN), 0.5f));
+                        att(new VFXAction(new WallopEffect(this.target.lastDamageTaken, this.target.hb.cX, this.target.hb.cY)));
                     }
                 }
 

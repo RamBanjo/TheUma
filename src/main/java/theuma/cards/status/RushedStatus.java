@@ -32,10 +32,12 @@ public class RushedStatus extends AbstractEasyCard {
        atb(new DrawCardAction(2));
     }
 
+    @Override
+    public boolean canUpgrade() {
+        return false;
+    }
+
     public void upp() {
-//        upgradeDamage(0);
-//        upgradeBlock(0);
-//        upgradeMagicNumber(0);
-//        upgradeBaseCost(-2);
+
     }
 }

@@ -17,6 +17,7 @@ public class LateStartStatus extends AbstractEasyCard {
     public LateStartStatus() {
         super(ID, -2, CardType.STATUS, CardRarity.COMMON, CardTarget.NONE, CardColor.COLORLESS);
         this.isEthereal = true;
+        
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -28,10 +29,12 @@ public class LateStartStatus extends AbstractEasyCard {
         applyToSelfTop(new DrawReductionPower(AbstractDungeon.player, 1));
     }
 
+    @Override
+    public boolean canUpgrade() {
+        return false;
+    }
+
     public void upp() {
-//        upgradeDamage(0);
-//        upgradeBlock(0);
-//        upgradeMagicNumber(0);
-//        upgradeBaseCost(-2);
+
     }
 }

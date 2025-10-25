@@ -31,11 +31,11 @@ public class Tether extends AbstractEasyCard{
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
 
-        //draw 1 card
-        atb(new DrawCardAction(1));
-
         //apply Weak
         applyToEnemy(abstractMonster, new WeakPower(abstractMonster, magicNumber, false));
+
+        //draw 1 card
+        atb(new DrawCardAction(1));
 
     }
 }

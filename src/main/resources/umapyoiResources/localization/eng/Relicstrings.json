@@ -1,18 +1,10 @@
 {
-  "${ModID}:TodoItem": {
-    "NAME": "Todo Item",
-    "FLAVOR": "TODO: make this a sweet relic.",
-    "DESCRIPTIONS": [
-      "Has no effect."
-    ]
-  },
-
   "${ModID}:MonarchCrown": {
-    "NAME": "Monarch's Crown",
-    "FLAVOR": "Heavy is the head that wears the crown...",
+    "NAME": "Monarch's Earring",
+    "FLAVOR": "She never gave up, so why should you?",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. Upon pickup, add a special #ystslib:Soulbound #rCurse to your deck.",
-      "Is my dream over...?"
+      "At the end of your turn, gain #yStrength equal to half your #yVigor [REMOVE_SPACE], then remove #yVigor [REMOVE_SPACE]. Upon pickup, #rfractures #ryour #rleg [REMOVE_SPACE].",
+      "Is my dream over?"
     ]
   },
 
@@ -28,8 +20,9 @@
     "NAME": "Standard Tracen Cleats",
     "FLAVOR": "A pair of well-worn running shoes, designed to withstand an Umamusume's training routine.",
     "DESCRIPTIONS": [
-      "Gain #b ",
-      " Vigor the first time extra cards are drawn each turn."
+      "Gain #b",
+      " #yVigor for every #b",
+      " cards drawn."
     ]
   },
 
@@ -37,7 +30,7 @@
     "NAME": "Champion's Golden Cleats",
     "FLAVOR": "These once belonged to Tokino Minoru, a legendary Umamusume.",
     "DESCRIPTIONS": [
-      "Replaces #yStandard #yTracen #yCleats [REMOVE_SPACE]. Gain #b ",
+      "Replaces #yStandard #yTracen #yCleats [REMOVE_SPACE]. Gain #b",
       " Vigor whenever a card is created during combat."
     ]
   },
@@ -50,24 +43,23 @@
     ]
   },
 
-  "${ModID}}VoidedChequeTwelveBillion": {
-    "NAME": "Voided Cheque for Twelve Billion Yen",
-    "FLAVOR": "For some reason, looking at this cheque fills you with melancholy.",
+  "${ModID}:TwelveBillion": {
+    "NAME": "Voided Cheque",
+    "FLAVOR": "12 billion yen, into nothing. It reminds you of a memory you'd rather forget.",
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. At the start of combat, shuffle #b3 #rLate #rStarts into your draw pile."
     ]
   },
 
-  "${ModID}}JumboCutiePlush": {
-    "NAME": "Jumbo Cutie Plush",
-    "FLAVOR": "She looks just like you, except she's more marketable and a lot less chaotic.",
+  "${ModID}:HorsePlush": {
+    "NAME": "Thoroughbred Plushie",
+    "FLAVOR": "It has the body of a cow and the head of an alpaca... What a strange creature!",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. At the start of combat, shuffle #b3",
-      " #rLate #rStarts into your draw pile."
+      "At the start of combat, improve your #yumapyoi:Mood by #b1 rank."
     ]
   },
 
-  "${ModID}}ClassicTripleCrown": {
+  "${ModID}:TripleCrown": {
     "NAME": "The Classic Triple Crown",
     "FLAVOR": "\"Do not take the nationals lightly.\"",
     "DESCRIPTIONS": [
@@ -77,7 +69,7 @@
     ]
   },
 
-  "${ModID}}CarrotCupcake": {
+  "${ModID}:CarrotCupcake": {
     "NAME": "Carrot Cupcake",
     "FLAVOR": "Pairs well with bitter juice!",
     "DESCRIPTIONS": [

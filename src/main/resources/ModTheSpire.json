@@ -5,7 +5,7 @@
     "RamChops Games"
   ],
   "description": "${project.description}",
-  "credits": "Made with the Pro Template by DarkVexon et al.",
+  "credits": "Made with the Pro Template by DarkVexon et al. Taiki Shutte's gun sound borrowed from the Hermit mod.",
   "version": "${project.version}",
   "sts_version": "${SlayTheSpire.version}",
   "mts_version": "${ModTheSpire.version}",

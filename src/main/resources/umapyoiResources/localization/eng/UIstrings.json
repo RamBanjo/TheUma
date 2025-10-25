@@ -1,5 +1,18 @@
 {
     "${ModID}:SoulboundMod": {
       "TEXT": ["%s NL stslib:Soulbound."]
-    }
+    },
+
+    "${ModID}:MyCardText": {
+      "TEXT": ["That's ~my~ ~card!~"]
+    },
+
+    "${ModID}:NothingToDrawText": {
+      "TEXT": ["I'm out of cards!"]
+    },
+
+  "${ModID}:TrainerDetected": {
+    "TEXT": ["RADAR SIGNAL ALERT!",
+    "That enemy does not intend to attack!"]
+  }
 }

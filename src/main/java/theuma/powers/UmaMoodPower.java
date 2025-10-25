@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -21,30 +20,47 @@ public class UmaMoodPower extends AbstractEasyPower{
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
+    public static final int MIN_MOOD = -2;
+    public static final int MAX_MOOD = 2;
 
-    private static final int MIN_MOOD = -2;
-    private static final int MAX_MOOD = 2;
+    private boolean makeThoughtBubble = true;
 
     public UmaMoodPower(AbstractCreature owner, int amount) {
         super(ID, NAME, PowerType.BUFF, false, owner, amount);
 
         this.canGoNegative = true;
-        clamp_mood_amt();
+
+        if(!owner.hasPower(ID) && (amount > MAX_MOOD || amount < MIN_MOOD)){
+            clamp_mood_amt();
+        }else if(owner.hasPower(ID)){
+            boolean exceedMax = owner.getPower(ID).amount + amount > MAX_MOOD;
+            boolean exceedMin = owner.getPower(ID).amount + amount < MIN_MOOD;
+
+            if (exceedMax || exceedMin){
+                clamp_mood_amt();
+            }
+        }
+
 
         System.out.println("UmaMood: " + amount);
     }
 
+    public UmaMoodPower(AbstractCreature owner, int amount, boolean makeThoughtBubble){
+        this(owner, amount);
+        this.makeThoughtBubble = makeThoughtBubble;
+    }
+
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + get_mood_string() + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2] + this.get_energy_gain() + DESCRIPTIONS[3];
+        this.description = DESCRIPTIONS[0] + getMoodStringNonStatic() + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2] + this.get_energy_gain() + DESCRIPTIONS[3];
 
         if (this.amount <= MIN_MOOD){
             this.description += DESCRIPTIONS[9];
         }
     }
 
-    private String get_mood_string(){
-        switch (this.amount){
+    public static String getMoodString(int currentMood){
+        switch (currentMood){
             case -2:
                 return DESCRIPTIONS[8];
             case -1:
@@ -58,12 +74,16 @@ public class UmaMoodPower extends AbstractEasyPower{
         }
     }
 
+    private String getMoodStringNonStatic(){
+        return getMoodString(this.amount);
+    }
+
     @Override
     public void stackPower(int stackAmount) {
         this.fontScale = 8.0F;
         this.amount += stackAmount;
         if (this.amount == 0) {
-            this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, NAME));
+            this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, ID));
         }
         clamp_mood_amt();
     }
@@ -73,7 +93,7 @@ public class UmaMoodPower extends AbstractEasyPower{
         this.fontScale = 8.0F;
         this.amount -= reduceAmount;
         if (this.amount == 0) {
-            this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, makeID("UmaMood")));
+            this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, ID));
         }
         clamp_mood_amt();
     }
@@ -82,15 +102,19 @@ public class UmaMoodPower extends AbstractEasyPower{
 
         if (this.amount > MAX_MOOD){
             this.amount = MAX_MOOD;
-            AbstractDungeon.effectList.add(new ThoughtBubble(owner.dialogX, owner.dialogY, 3.0F, DESCRIPTIONS[10], true));
+
+            if (makeThoughtBubble){
+                AbstractDungeon.effectList.add(new ThoughtBubble(owner.dialogX, owner.dialogY, 3.0F, DESCRIPTIONS[10], true));
+            }
         }
 
         if (this.amount < MIN_MOOD){
             this.amount = MIN_MOOD;
-            AbstractDungeon.effectList.add(new ThoughtBubble(owner.dialogX, owner.dialogY, 3.0F, DESCRIPTIONS[11], true));
+
+            if (makeThoughtBubble){
+                AbstractDungeon.effectList.add(new ThoughtBubble(owner.dialogX, owner.dialogY, 3.0F, DESCRIPTIONS[11], true));
+            }
         }
-
-
     }
 
     private int get_energy_gain(){
