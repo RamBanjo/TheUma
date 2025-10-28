@@ -9,10 +9,5 @@
 
     "${ModID}:NothingToDrawText": {
       "TEXT": ["I'm out of cards!"]
-    },
-
-  "${ModID}:TrainerDetected": {
-    "TEXT": ["RADAR SIGNAL ALERT!",
-    "That enemy does not intend to attack!"]
-  }
+    }
 }

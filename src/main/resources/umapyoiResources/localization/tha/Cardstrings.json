@@ -1,44 +1,44 @@
 {
   "${ModID}:Strike": {
-    "NAME": "Strike",
-    "DESCRIPTION": "Deal !D! damage."
+    "NAME": "จู่โจม",
+    "DESCRIPTION": "สร้างความเสียหาย !D!"
   },
   "${ModID}:Defend": {
-    "NAME": "Defend",
-    "DESCRIPTION": "Gain !B! Block."
+    "NAME": "ป้องกัน",
+    "DESCRIPTION": "ได้รับ !B! เกราะ"
   },
 
   "${ModID}:PaceChaser": {
-    "NAME": "Pace Chaser",
-    "DESCRIPTION": "Draw 1 card. NL Gain Block equal to !M! times its cost. NL (Unplayable counts as 1.)",
-    "UPGRADE_DESCRIPTION": "Draw 1 card. Gain Block equal to !M! times its cost. NL (0-cost and Unplayable count as 1.)"
+    "NAME": "วิ่งตาม",
+    "DESCRIPTION": "จั่วการ์ด 1 ใบ NL ได้รับเกราะเท่ากับ !M! เท่าของค่าร่าย NL (การ์ดถูกผนึกนับเป็น 1)",
+    "UPGRADE_DESCRIPTION": "จั่วการ์ด 1 ใบ NL ได้รับเกราะเท่ากับ !M! เท่าของค่าร่าย NL (การ์ดถูกผนึกหรือค่าร่าย 0 นับเป็น 1)"
   },
 
   "${ModID}:FrontRunner": {
-    "NAME": "Front Runner",
-    "DESCRIPTION": "Draw 1 card. NL Deal !D! damage X times, where X is the drawn card's cost. NL (Unplayable counts as 1.)",
-    "UPGRADE_DESCRIPTION": "Draw 1 card. Deal !D! damage X times, where X is the drawn card's cost. NL (0-cost and Unplayable count as 1.)"
+    "NAME": "วิ่งนำ",
+    "DESCRIPTION": "จั่วการ์ด 1 ใบ NL สร้างความเสียหาย !D! จำนวนครั้งเท่าค่าร่าย NL (การ์ด ถูกผนึก นับเป็น 1)",
+    "UPGRADE_DESCRIPTION": "จั่วการ์ด 1 ใบ NL ได้รับเกราะเท่ากับ !M! เท่าของค่าร่าย NL (การ์ด ถูกผนึก หรือค่าร่าย 0 นับเป็น 1)"
   },
 
   "${ModID}:LateSurger": {
-    "NAME": "Late Surger",
-    "DESCRIPTION": "Next turn, gain [E] NL and !${ModID}:m2! Vigor.",
-    "UPGRADE_DESCRIPTION": "Next turn, gain [E] [E] NL and !${ModID}:m2! Vigor."
+    "NAME": "รอวิ่งพุ่ง",
+    "DESCRIPTION": "เทิร์นต่อไป ได้รับ [E] NL และ !${ModID}:m2! ความกำยำ",
+    "UPGRADE_DESCRIPTION": "เทิร์นต่อไป ได้รับ [E] [E] NL และ !${ModID}:m2! ความกำยำ"
   },
 
   "${ModID}:EndCloser": {
-    "NAME": "End Closer",
-    "DESCRIPTION": "Deal !D! damage to random enemies !M! times. NL End your turn."
+    "NAME": "วิ่งปิดจบ",
+    "DESCRIPTION": "สร้างความเสียหาย !D! ใส่ศัตรูแบบสุ่ม จำนวน !M! ครั้ง NL จบเทิร์นทันที"
   },
 
   "${ModID}:FreshRyegrass": {
-    "NAME": "Fresh Ryegrass",
-    "DESCRIPTION": "Gain !B! Block. NL When exhausted, shuffle a copy with !M! more Block into your draw pile."
+    "NAME": "หญ้าสด",
+    "DESCRIPTION": "ได้รับ !B! เกราะ NL ถ้าการ์ดนี้ถูก สลาย สับสำเนานของการ์ดใบนี้ที่เพี่มเกราะ !M! เข้ากองจั่ว"
   },
 
   "${ModID}:MoodSwing": {
-    "NAME": "Mood Swing",
-    "DESCRIPTION": "{@@}Deal !D! damage. Worsen umapyoi:Mood by 1 rank. NL umapyoi:Sorrow: Deal !D! damage !M! more time{!M!|>1=s}."
+    "NAME": "อารมณ์แปรปรวน",
+    "DESCRIPTION": "สร้างความเสียหาย !D! umapyoi:อารมณ์ แย่ลง 1 NL umapyoi:โศก: สร้างความเสียหาย !D! อีก !M! ครั้ง"
   },
 
   "${ModID}:ElatedCoverage": {
@@ -102,13 +102,12 @@
   },
 
   "${ModID}:GolshiKick": {
-    "NAME": "Golshi Kick",
-    "DESCRIPTION": "Deal !D! damage. NL If !M! or more cards were played this turn, gain [E] and draw !${ModID}:m2! card.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL If !M! or more cards were played this turn, gain [E] and draw !${ModID}:m2! cards.",
+    "NAME": "กระโดดถีบโกลชิ",
+    "DESCRIPTION": "สร้างความเสียหาย !D! NL ถ้าเทิร์นนี้เล่นการ์ดแล้วอย่างน้อย !M! ใบ ได้รับ [E] และจั่วการ์ด !${ModID}:m2! ใบ",
     "EXTENDED_DESCRIPTION": [
-      " NL (",
-      " card played.)",
-      " cards played.)"
+      " NL (เล่นการ์ดไปแล้ว",
+      " ใบ)",
+      " ใบ)"
     ]
   },
 
@@ -148,13 +147,13 @@
   },
 
   "${ModID}:InspirationStrikes": {
-    "NAME": "Inspiration!",
-    "DESCRIPTION": "{@@}Draw 1 card. NL Exhaust 1 card. NL If a umapyoi:Non-Uma card was exhausted, draw !M! card{!M!|>1=s}."
+    "NAME": "แรงบันดาลใจ!",
+    "DESCRIPTION": "จั่วการ์ด 1 ใบ NL สลายการ์ด 1 ใบ NL ถ้า สลาย การ์ด umapyoi:ไม่ม้า จั่วการ์ด !M! ใบ"
   },
 
   "${ModID}:AdoredByAll": {
     "NAME": "Adored By All",
-    "DESCRIPTION": "Deal !D! damage. NL umapyoi:Joy: Deal !${ModID}:sd! damage to ALL enemies as well."
+    "DESCRIPTION": "สร้างความเสียหาย !D! NL umapyoi:สุขี: สร้างความเสียหาย !${ModID}:sd! ใส่ศัตรูทั้งหมดด้วย"
   },
 
   "${ModID}:KiryuinsFavor": {
@@ -241,8 +240,8 @@
   },
 
   "${ModID}:Bakushin": {
-    "NAME": "BAKUSHIN!",
-    "DESCRIPTION": "Gain [E]. NL Draw !M! cards. NL Shuffle 2 copies of *Rushed into your draw pile."
+    "NAME": "บาคุชิน!",
+    "DESCRIPTION": "ได้รับ [E] NL จั่วการ์ด !M! ใบ NL สับ *ถูกเร่ง 2 ใบ เข้ากองจั่ว"
   },
 
   "${ModID}:BorrowedLegacy": {
@@ -266,8 +265,8 @@
   },
 
   "${ModID}:TeioStep": {
-    "NAME": "Teio Step",
-    "DESCRIPTION": "Deal !D! damage. NL Whenever you draw a card this turn, the enemy loses !M! HP."
+    "NAME": "เทโอะสเต็ป",
+    "DESCRIPTION": "สร้างความเสียหาย !D! NL ทุกครั้งที่จั่วการ์ดในเทิร์นนี้ ศัตรูจะสูญเสีย !M! HP"
   },
 
   "${ModID}:Yada": {
@@ -439,21 +438,21 @@
   },
 
   "${ModID}:RadarAlert": {
-    "NAME": "RADAR ALERT!",
-    "DESCRIPTION": "{@@}Choose to add a *Dropkick{!Upgrades!|>0=+}, *Wheel *Kick{!Upgrades!|>0=+}, or *Golshi *Kick{!Upgrades!|>0=+} with Exhaust to your hand. If an enemy intends to attack, it costs 0 until played.",
-    "EXTENDED_DESCRIPTION": ["Inspired by myself!",
-      "RADAR ALERT! RADAR ALERT!",
-      "That enemy does not intend to attack!"]
+    "NAME": "เรดาร์เตือน!",
+    "DESCRIPTION": "{@@}เลือกที่จะเพี่ม *กระโดดถีบขาคู่{!Upgrades!|>0=+}, *จระเข้ฟ้าดหาง{!Upgrades!|>0=+} หรือ *กระโดดถีบโกลชิ{!Upgrades!|>0=+} แบบ สลาย ในมือ ถ้าศัตรูคิดจะโจมตี มันมีค่าร่าย 0 จนกว่าจะถูกใช้",
+    "EXTENDED_DESCRIPTION": ["ได้รับแรงบันดาลใจจากตัวเอง!",
+      "สัญญาณเรดาร์ทำงาน!",
+      "ศัตรูไม่ได้คิดจะโจมตี!"]
   },
 
   "${ModID}:TrainingRestricted": {
-    "NAME": "Restrict Training",
-    "DESCRIPTION": "Gain !M! [E]. NL Improve umapyoi:Mood by 2 ranks. Gain a random action-restricting debuff.",
-    "EXTENDED_DESCRIPTION": ["My legs are still sore from yesterday's race...",
-      "I'm not getting into the water!",
-      "My arms! My poor, poor arms!",
-      "Guts isn't meta on Global yet!",
-      "Studying is boring, I'd rather run!"
+    "NAME": "ห้ามการฝึก",
+    "DESCRIPTION": "ได้รับ !M! [E]. NL umapyoi:อารมณ์ ดีขึ้น 2 ได้รับผลผิดปกติที่ห้ามทำบางอย่างแบบสุ่ม",
+    "EXTENDED_DESCRIPTION": ["ขายังปวดจากวิ่งแข่งอยู่เลย...",
+      "ฉันไม่ลงน้ำเด็ดขาด!",
+      "แขนฉัน! แขนที่น่าสงสารของฉัน!",
+      "Guts เซิร์ฟ Global ยังห่วยอยู่!",
+      "อ่านหนังสือน่าเบื่อจะตาย ไปวิ่งดีกว่า!"
     ]
   },
 
@@ -500,8 +499,8 @@
   },
 
   "${ModID}:Dominator": {
-    "NAME": "Dominator",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL The enemy can't gain Strength for !M! turn{!M!|>1=s}. Exhaust."
+    "NAME": "ผู้ครอบงำ",
+    "DESCRIPTION": "สร้างความเสียหาย !D! NL ศัตรูไม่สามารถได้รับ ความแข็งแรง เป็นเวลา !M! เทิร์น สลาย"
   },
 
   "${ModID}:DivineMight": {
@@ -653,8 +652,8 @@
   },
 
   "${ModID}:LateStartStatus": {
-    "NAME": "Late Start",
-    "DESCRIPTION": "Unplayable. Ethereal. NL When exhausted, gain 1 *Draw *Reduction."
+    "NAME": "ออกตัวช้า",
+    "DESCRIPTION": "ถูกผนึก กึ่งสลาย เมื่อ ถ้าการ์ดนี้ถูก สลาย NL ได้รับ 1 *จั่วการ์ดน้อยลง"
   },
 
   "${ModID}:NightOwlStatus": {
@@ -663,8 +662,8 @@
   },
 
   "${ModID}:RushedStatus": {
-    "NAME": "Rushed",
-    "DESCRIPTION": "Unplayable. Ethereal. Whenever this card is drawn, lose [E] and draw 2 cards."
+    "NAME": "ถูกเร่ง",
+    "DESCRIPTION": "ถูกผนึก กึ่งสลาย เมื่อจั่วได้การ์ดนี้ สูญเสีย [E] และจั่วการ์ด 2 ใบ"
   },
 
   "${ModID}:SlackerStatus": {
@@ -678,22 +677,22 @@
   },
 
   "${ModID}:LegFractureCurse": {
-    "NAME": "Fractured Leg",
-    "DESCRIPTION": "Innate. Unplayable. Retain. stslib:Soulbound. When Retained, worsen umapyoi:Mood by 1 rank. NL When exhausted, add a *Migraine, *Skin *Outbreak, and *Practice *Poor to the top of your draw pile."
+    "NAME": "ขาหัก",
+    "DESCRIPTION": "ติดตัว ถูกผนึก คงสภาพ stslib:Soulbound. เมื่อถูกคงสภาพ umapyoi:อารมณ์ แย่ลง 1 NL ถ้าการ์ดถูก สลาย เพี่ม *ไมเกรน *ผิวแห้ง และ *ซ้อมผิดท่า ไว้บนสุดของกองจั่ว"
   },
 
   "${ModID}:SkinOutbreakCurse": {
-    "NAME": "Skin Outbreak",
-    "DESCRIPTION": "Unplayable. At the end of your turn, worsen umapyoi:Mood by 1 rank and add 1 Burn to the discard pile."
+    "NAME": "ผิวแห้ง",
+    "DESCRIPTION": "ถูกผนึก เมื่อจบเทิร์น umapyoi:อารมณ์ แย่ลง 1 และเพี่ม 1 เผาไหม้ ในกองทิ้ง"
   },
 
   "${ModID}:PracticePoorCurse": {
-    "NAME": "Practice Poor",
-    "DESCRIPTION": "Unplayable. Ethereal. When this card is exhausted, worsen umapyoi:Mood by 1 rank and shuffle 2 Dazed into your draw pile."
+    "NAME": "ซ้อมผิดท่า",
+    "DESCRIPTION": "ถูกผนึก กึ่งสลาย ถ้าการ์ดนี้ถูก สลาย umapyoi:อารมณ์ แย่ลง 1 และเพี่ม 2 ความมึนงง ในกองจั่ว"
   },
 
   "${ModID}:MigraineCurse": {
-    "NAME": "Migraine",
-    "DESCRIPTION": "Unplayable. At the end of your turn, worsen umapyoi:Mood by 2 ranks."
+    "NAME": "ไมเกรน",
+    "DESCRIPTION": "ถูกผนึก เมื่อจบเทิร์น umapyoi:อารมณ์ แย่ลง 2"
   }
 }

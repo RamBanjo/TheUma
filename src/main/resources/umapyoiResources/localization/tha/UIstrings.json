@@ -1,0 +1,18 @@
+{
+    "${ModID}:SoulboundMod": {
+      "TEXT": ["%s NL stslib:Soulbound."]
+    },
+
+    "${ModID}:MyCardText": {
+      "TEXT": ["นั่นมัน ~การ์ดของเรา!~"]
+    },
+
+    "${ModID}:NothingToDrawText": {
+      "TEXT": ["การ์ดหมดแล้ว!"]
+    },
+
+  "${ModID}:TrainerDetected": {
+    "TEXT": ["สัญญาณเรดาร์ทำงาน!",
+    "ศัตรูไม่ได้คิดจะโจมตี!"]
+  }
+}
