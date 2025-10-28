@@ -173,8 +173,8 @@
   "${ModID}:UmadolPower": {
     "NAME": "Umadol",
     "DESCRIPTIONS": [
-      "Convert all incoming damage to #yVigor this turn.",
-      "Convert all incoming damage to #Vigor for #b",
+      "Negate all HP loss and convert all incoming damage to #yVigor this turn.",
+      "Negate all HP loss and convert all incoming damage to #Vigor for #b",
       " turns."
     ]
   },

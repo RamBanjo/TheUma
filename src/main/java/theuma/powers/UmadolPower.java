@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
+import org.lwjgl.Sys;
 import theuma.util.Wiz;
 
 import static theuma.ModFile.makeID;
@@ -37,13 +38,11 @@ public class UmadolPower extends AbstractEasyPower{
 
         this.flash();
 
-        int vigorGain = (int) Math.floor(damageAmount * 0.5);
+        int vigorGain = (int) Math.floor((float)info.output * 0.5);
 
         if (vigorGain > 0){
             atb(new ApplyPowerAction(this.owner, this.owner, new VigorPower(this.owner, vigorGain)));
         }
-
-
 
         return 0;
     }

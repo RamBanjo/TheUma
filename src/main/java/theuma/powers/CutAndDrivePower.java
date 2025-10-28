@@ -40,15 +40,17 @@ public class CutAndDrivePower extends AbstractEasyPower{
     @Override
     public void onCardDraw(AbstractCard card) {
 
-        this.flash();
+        if(!AbstractDungeon.getMonsters().areMonstersBasicallyDead()){
+            this.flash();
+            AbstractMonster victim = AbstractDungeon.getRandomMonster();
+            if (victim != null){
+                atb(new LoseHPAction(victim, null, this.amount));
+//                if(victim.currentHealth > 0 && !victim.halfDead){
+//
+//                }
+            }
 
-        AbstractMonster victim = AbstractDungeon.getRandomMonster();
-
-//        vfx(new PotionBounceEffect(owner.hb.cX, owner.hb.cY, victim.hb.cX, victim.hb.cY), 0.4F);
-//        atb(new WaitAction(0.4f));
-//        vfx(new FlashAtkImgEffect(victim.hb.x, victim.hb.y, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-//        vfx(new WaterSplashParticleEffect(victim.hb.cX, victim.hb.cY));
-        atb(new LoseHPAction(victim, null, this.amount));
+        }
     }
 
     public void updateDescription() {

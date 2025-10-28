@@ -66,7 +66,7 @@ public class CompetitiveSpirit extends AbstractEasyCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
-        atb(new MakeTempCardInDiscardAction(new CompetitiveSpirit(), 1));
+        atb(new MakeTempCardInDiscardAction(this.makeStatEquivalentCopy(), 1));
 //        atb(new DrawCardAction(p, 1));
 
 

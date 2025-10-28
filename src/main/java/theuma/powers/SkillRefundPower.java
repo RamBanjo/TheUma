@@ -28,7 +28,7 @@ public class SkillRefundPower extends AbstractEasyPower{
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card.type == AbstractCard.CardType.SKILL && !card.purgeOnUse && this.amount > 0) {
-            att(new GainEnergyAction(card.energyOnUse));
+            atb(new GainEnergyAction(card.energyOnUse));
             this.flash();
             --this.amount;
             if (this.amount == 0) {

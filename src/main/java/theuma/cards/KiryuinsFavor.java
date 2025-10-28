@@ -19,7 +19,7 @@ public class KiryuinsFavor extends AbstractEasyCard {
     // intellij stuff SKILL, SELF, COMMON, 0, 0, 0, 0, 1, 1
 
     public KiryuinsFavor() {
-        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
+        super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         baseMagicNumber = magicNumber = 2;
         baseSecondMagic = secondMagic = 4;
 
@@ -29,9 +29,9 @@ public class KiryuinsFavor extends AbstractEasyCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         if (CommonUmaMethods.playerIsJoyful(p)){
-            applyToSelf(new VigorPower(p, magicNumber));
-        }else{
             applyToSelf(new VigorPower(p, secondMagic));
+        }else{
+            applyToSelf(new VigorPower(p, magicNumber));
         }
     }
 

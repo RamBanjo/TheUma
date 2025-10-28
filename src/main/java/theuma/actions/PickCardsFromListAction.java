@@ -71,14 +71,12 @@ public class PickCardsFromListAction extends AbstractGameAction {
                 eligibleCardsList.forEach(AbstractCard::upgrade);
             }
 
-            if (discount != 0){
+            if (discount != 0 && eligibleCardsList.get(i).cost > 0){
                 if (discount == -1){
                     eligibleCardsList.get(i).freeToPlayOnce = true;
                 }else{
-
                     int newCost = eligibleCardsList.get(i).costForTurn - discount;
                     eligibleCardsList.get(i).setCostForTurn(Math.max(newCost, 0));
-
                 }
             }
 

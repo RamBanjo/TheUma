@@ -10,14 +10,14 @@
 
   "${ModID}:PaceChaser": {
     "NAME": "Pace Chaser",
-    "DESCRIPTION": "Draw 1 card. NL Gain Block equal to !M! times its cost. NL (X-cost and Unplayable count as 1.)",
-    "UPGRADE_DESCRIPTION": "Draw 1 card. Gain Block equal to !M! times its cost. NL (X-cost, 0-cost, and Unplayable count as 1.)"
+    "DESCRIPTION": "Draw 1 card. NL Gain Block equal to !M! times its cost. NL (Unplayable counts as 1.)",
+    "UPGRADE_DESCRIPTION": "Draw 1 card. Gain Block equal to !M! times its cost. NL (0-cost and Unplayable count as 1.)"
   },
 
   "${ModID}:FrontRunner": {
     "NAME": "Front Runner",
-    "DESCRIPTION": "Draw 1 card. NL Deal !D! damage X times, where X is the drawn card's cost. NL (X-cost and Unplayable count as 1.)",
-    "UPGRADE_DESCRIPTION": "Draw 1 card. Deal !D! damage X times, where X is the drawn card's cost. NL (X-cost, 0-cost, and Unplayable count as 1.)"
+    "DESCRIPTION": "Draw 1 card. NL Deal !D! damage X times, where X is the drawn card's cost. NL (Unplayable counts as 1.)",
+    "UPGRADE_DESCRIPTION": "Draw 1 card. Deal !D! damage X times, where X is the drawn card's cost. NL (0-cost and Unplayable count as 1.)"
   },
 
   "${ModID}:LateSurger": {
@@ -154,7 +154,7 @@
 
   "${ModID}:AdoredByAll": {
     "NAME": "Adored By All",
-    "DESCRIPTION": "Deal !${ModID}:sd! damage. NL umapyoi:Joy: Deal !D! damage to ALL enemies as well."
+    "DESCRIPTION": "Deal !D! damage. NL umapyoi:Joy: Deal !${ModID}:sd! damage to ALL enemies as well."
   },
 
   "${ModID}:KiryuinsFavor": {
@@ -289,7 +289,7 @@
 
   "${ModID}:CutAndDrive": {
     "NAME": "Cut and Drive!",
-    "DESCRIPTION": "Whenever you draw a card this turn, a random enemy takes !M! damage. NL Draw 1 card."
+    "DESCRIPTION": "Whenever you draw a card this turn, a random enemy loses !M! HP. NL Draw 1 card."
   },
 
   "${ModID}:DailyShop": {
@@ -359,7 +359,7 @@
 
   "${ModID}:RestDay": {
     "NAME": "Rest Day",
-    "DESCRIPTION": "Gain !M! [E]. NL Add a *Night *Owl to the discard pile."
+    "DESCRIPTION": "Gain !M! [E]. NL Add a *Night *Owl to the discard pile. Exhaust."
   },
 
   "${ModID}:ScrambleZone": {
@@ -464,7 +464,7 @@
 
   "${ModID}:WinQED": {
     "NAME": "Win QED",
-    "DESCRIPTION": "Choose to add a *Calculated *Gamble+, *Expertise, or *Skim to your hand. Exhaust.",
+    "DESCRIPTION": "Choose to add a *Calculated *Gamble+, *Expertise, or *Skim to your hand. It costs 0 until played. Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "Inspired by Biwa Hayahide!"
     ]
@@ -527,8 +527,8 @@
 
   "${ModID}:SparklingStardom": {
     "NAME": "Sparkling Stardom",
-    "DESCRIPTION": "Ethereal. Negate all incoming damage this turn and convert half of all incoming damage to Vigor. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Negate all incoming damage this turn and convert half of all incoming damage to Vigor. Exhaust."
+    "DESCRIPTION": "Ethereal. Negate all HP loss this turn and convert half of all incoming damage to Vigor. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Negate all HP loss this turn and convert half of all incoming damage to Vigor. Exhaust."
   },
 
   "${ModID}:Gourmand": {

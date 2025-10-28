@@ -11,8 +11,7 @@ import theuma.cards.generated.TripleSevens;
 import theuma.util.CommonUmaMethods;
 
 import static theuma.ModFile.makeID;
-import static theuma.util.Wiz.adp;
-import static theuma.util.Wiz.atb;
+import static theuma.util.Wiz.*;
 
 public class LuckySeven extends AbstractEasyCard implements OnCreateCardInterface {
     public final static String ID = makeID("LuckySeven");
@@ -43,7 +42,7 @@ public class LuckySeven extends AbstractEasyCard implements OnCreateCardInterfac
 
     @Override
     public void upp() {
-        this.retain = true;
+        this.selfRetain = true;
 
         if (cardsToPreview != null){
             cardsToPreview.upgrade();
@@ -52,7 +51,7 @@ public class LuckySeven extends AbstractEasyCard implements OnCreateCardInterfac
 
     @Override
     public void onCreateCard(AbstractCard abstractCard) {
-        if (this.costForTurn > 0){
+        if (hand().contains(this) && this.costForTurn > 0){
             this.flash();
             this.updateCost(-1);
         }

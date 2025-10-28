@@ -57,7 +57,7 @@ public class Sympathy extends AbstractEasyCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         atb(new GainBlockAction(p, this.block + (this.magicNumber * countCards())));
-        atb(new MakeTempCardInDiscardAction(new Sympathy(), 1));
+        atb(new MakeTempCardInDiscardAction(this.makeStatEquivalentCopy(), 1));
 //        atb(new DrawCardAction(p, 1));
     }
 

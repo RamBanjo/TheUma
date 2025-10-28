@@ -1,6 +1,7 @@
 package theuma.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -8,6 +9,7 @@ import theuma.util.CommonUmaMethods;
 
 import static theuma.ModFile.makeID;
 import static theuma.util.Wiz.adp;
+import static theuma.util.Wiz.atb;
 
 public class LookAtCurren extends AbstractEasyCard {
     public final static String ID = makeID("LookAtCurren");
@@ -25,7 +27,8 @@ public class LookAtCurren extends AbstractEasyCard {
         allDmg(AbstractGameAction.AttackEffect.FIRE);
 
         if (cardConditional()){
-            allDmg(AbstractGameAction.AttackEffect.FIRE);
+//            allDmg(AbstractGameAction.AttackEffect.FIRE);
+            atb(new MakeTempCardInDiscardAction(this.makeStatEquivalentCopy(), 2));
         }
     }
 
