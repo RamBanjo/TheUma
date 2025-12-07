@@ -31,6 +31,9 @@ public class UMaTwo extends AbstractEasyCard {
         int exhausted = 0;
 
         for(AbstractCard c: p.hand.group){
+
+            if (c == this) continue;
+
             exhausted += 1;
             atb(new ExhaustSpecificCardAction(c, p.hand));
         }

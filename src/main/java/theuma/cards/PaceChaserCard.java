@@ -57,6 +57,10 @@ public class PaceChaserCard extends AbstractEasyCard{
                     effectiveCost = Math.max(EnergyPanel.getCurrentEnergy(), minimum);
                 }
 
+                if(c.costForTurn == -2){
+                    effectiveCost = 1;
+                }
+
                 if(effectiveCost * amount > 0){
                     att(new GainBlockAction(adp(), adp(), effectiveCost * amount));
                 }

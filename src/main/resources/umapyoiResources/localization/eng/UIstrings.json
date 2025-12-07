@@ -9,5 +9,9 @@
 
     "${ModID}:NothingToDrawText": {
       "TEXT": ["I'm out of cards!"]
-    }
+    },
+
+  "${ModID}:AnglingAction": {
+    "TEXT": ["Choose a card to copy to your hand."]
+  }
 }

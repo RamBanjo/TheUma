@@ -17,7 +17,7 @@ public class IronWIll extends AbstractEasyCard {
 
     public IronWIll() {
         super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseBlock = 20;
+        baseBlock = 10;
         this.baseMagicNumber = this.magicNumber = 1;
     }
 

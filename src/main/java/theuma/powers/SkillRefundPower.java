@@ -22,13 +22,37 @@ public class SkillRefundPower extends AbstractEasyPower{
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
+    static boolean isInitialApply = false;
+
     public SkillRefundPower(AbstractCreature owner, int amount) {
         super(ID, NAME, PowerType.BUFF, false, owner, amount);
     }
 
+    @Override
+    public void onInitialApplication() {
+//        isInitialApply = true;
+    }
+
+    @Override
+    public void onVictory() {
+//        isInitialApply = false;
+    }
+
     public void onUseCard(AbstractCard card, UseCardAction action) {
+
+//        if (isInitialApply){
+//            isInitialApply = false;
+//            return;
+//        }
+
         if (card.type == AbstractCard.CardType.SKILL && !card.purgeOnUse && this.amount > 0) {
-            atb(new GainEnergyAction(card.energyOnUse));
+
+            if(card.cost == -1){
+                atb(new GainEnergyAction(card.energyOnUse));
+            }else{
+                atb(new GainEnergyAction(card.costForTurn));
+            }
+
             this.flash();
             --this.amount;
             if (this.amount == 0) {

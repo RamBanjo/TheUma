@@ -24,7 +24,7 @@ public class LateNightResearch extends AbstractEasyCard{
     public final static String ID = makeID("LateNightResearch");
 
     public LateNightResearch(){
-        super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
+        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
 
         this.baseMagicNumber = this.magicNumber = 3;
         MultiCardPreview.add(this, new NightOwlStatus());

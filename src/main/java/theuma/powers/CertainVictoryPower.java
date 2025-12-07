@@ -14,7 +14,7 @@ import theuma.powers.hooks.OnEnemyDeathPower;
 import static theuma.ModFile.makeID;
 import static theuma.util.Wiz.*;
 
-public class CertainVictoryPower extends AbstractEasyPower implements OnEnemyDeathPower {
+public class CertainVictoryPower extends AbstractEasyPower{
 
     public final static String ID = makeID("CertainVictoryPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(ID);
@@ -31,8 +31,13 @@ public class CertainVictoryPower extends AbstractEasyPower implements OnEnemyDea
     }
 
     @Override
-    public void onEnemyDeath(AbstractMonster m) {
+    public void atStartOfTurn() {
         applyToSelfTop(new VigorPower(adp(), amount));
-        att(new DrawCardAction(1));
     }
+
+    //    @Override
+//    public void onEnemyDeath(AbstractMonster m) {
+//        applyToSelfTop(new VigorPower(adp(), amount));
+//        att(new DrawCardAction(1));
+//    }
 }

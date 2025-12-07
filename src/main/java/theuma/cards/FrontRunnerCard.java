@@ -62,6 +62,10 @@ public class FrontRunnerCard extends AbstractEasyCard{
                     effectiveCost = Math.max(EnergyPanel.getCurrentEnergy(), minimum);
                 }
 
+                if(c.costForTurn == -2){
+                    effectiveCost = 1;
+                }
+
                 for(int i = 0; i < effectiveCost; i ++){
                     att(new DamageAction(target, new DamageInfo(adp(), amount), AttackEffect.BLUNT_LIGHT));
                 }

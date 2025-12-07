@@ -27,20 +27,20 @@ public class Dominator extends AbstractEasyCard {
     public Dominator() {
         super(ID, 2, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
         baseDamage = 15;
-        baseMagicNumber = magicNumber = 3;
+        baseMagicNumber = magicNumber = 1;
         this.exhaust = true;
 
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         if(m != null){
-            atb(new SFXAction("MONSTER_COLLECTOR_DEBUFF"));
-            atb(new VFXAction(new CollectorCurseEffect(m.hb.cX, m.hb.cY)));
+            att(new SFXAction("MONSTER_COLLECTOR_DEBUFF"));
+            att(new VFXAction(new CollectorCurseEffect(m.hb.cX, m.hb.cY)));
         }
 
         dmg(m, AbstractGameAction.AttackEffect.NONE);
 
-        applyToEnemy(m, new NoGainsPower(m, 3));
+        applyToEnemy(m, new NoGainsPower(m, magicNumber));
     }
 
     @Override

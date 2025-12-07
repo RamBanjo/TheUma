@@ -16,8 +16,8 @@ public class CallMeKing extends AbstractEasyCard {
     // intellij stuff attack, enemy, rare, , , , , 0, 1
 
     public CallMeKing() {
-        super(ID, 0, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
-        baseDamage = 2;
+        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        baseDamage = 6;
         baseMagicNumber = magicNumber = 2;
         baseSecondMagic = secondMagic = 2;
         this.exhaust = true;
@@ -59,6 +59,6 @@ public class CallMeKing extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        upgradeSecondMagic(1);
+        upgradeMagicNumber(1);
     }
 }

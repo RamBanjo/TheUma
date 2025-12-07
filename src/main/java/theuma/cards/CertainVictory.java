@@ -18,7 +18,7 @@ public class CertainVictory extends AbstractEasyCard {
 
     public CertainVictory() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
-        this.baseMagicNumber = this.magicNumber = 5;
+        this.baseMagicNumber = this.magicNumber = 3;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -27,6 +27,6 @@ public class CertainVictory extends AbstractEasyCard {
 
     @Override
     public void upp() {
-        upgradeMagicNumber(3);
+        upgradeMagicNumber(1);
     }
 }

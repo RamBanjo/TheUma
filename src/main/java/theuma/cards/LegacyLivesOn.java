@@ -19,7 +19,7 @@ public class LegacyLivesOn extends AbstractEasyCard{
 
     public LegacyLivesOn() {
         super(ID, 0, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 5;
+        baseMagicNumber = magicNumber = 3;
         FleetingField.fleeting.set(this, true);
     }
 
@@ -31,6 +31,6 @@ public class LegacyLivesOn extends AbstractEasyCard{
 
     @Override
     public void upp() {
-        upgradeMagicNumber(5);
+        upgradeMagicNumber(2);
     }
 }

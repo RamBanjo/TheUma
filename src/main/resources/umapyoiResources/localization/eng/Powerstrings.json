@@ -48,8 +48,8 @@
   "${ModID}:CertainVictoryPower": {
     "NAME": "Certain Victory",
     "DESCRIPTIONS": [
-      "When an enemy dies, gain #b",
-      " #yVigor and draw #b1 card."]
+      "At the start of your turn, gain #b",
+      " #yVigor [REMOVE_SPACE]."]
   },
 
   "${ModID}:TeioStepPower": {
@@ -215,5 +215,29 @@
     "DESCRIPTIONS": [
       "Prevents death once and heal to #b",
       "% of your Max HP, then remove a copy of #yA #yLittle #yFurther from your deck instead."]
+  },
+
+  "${ModID}:TenAMPower": {
+    "NAME": "10 AM Uma",
+    "DESCRIPTIONS": [
+      "At the start of your next turn, apply a random action-restricting debuff to yourself.",
+      "At the start of your next #b",
+      " turns, apply a random action-restricting debuff to yourself.",
+      "The treadmill's all booked up!",
+      "The beach's already packed!",
+      "Someone's hogging all the weights...",
+      "Dance Studio's off limits!",
+      "The library's closed today!"]
+  },
+
+  "${ModID}:OversightPower": {
+    "NAME": "Oversight",
+    "DESCRIPTIONS": [
+      "At the start of your turn, apply a random action-restricting debuff to yourself.",
+      "She wants me to run today, so I won't!",
+      "She wants me to swim today, so I won't!",
+      "She wants me to lift today, so I won't!",
+      "She wants me to dance today, so I won't!",
+      "She wants me to study today, so I won't!"]
   }
 }

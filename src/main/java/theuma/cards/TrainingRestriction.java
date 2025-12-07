@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.powers.EntanglePower;
 import com.megacrit.cardcrawl.powers.NoBlockPower;
 import com.megacrit.cardcrawl.powers.NoDrawPower;
 import com.megacrit.cardcrawl.vfx.SpeechBubble;
+import theuma.actions.TrainingRestrictAction;
 import theuma.cards.status.SlackerStatus;
 import theuma.powers.EntangleWithAmount;
 import theuma.powers.NoGainsPower;
@@ -37,38 +38,14 @@ public class TrainingRestriction extends AbstractEasyCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         atb(new GainEnergyAction(magicNumber));
         applyToSelf(new UmaMoodPower(p, 2, false));
+        atb(new TrainingRestrictAction(
+                cardStrings.EXTENDED_DESCRIPTION[0],
+                cardStrings.EXTENDED_DESCRIPTION[1],
+                cardStrings.EXTENDED_DESCRIPTION[2],
+                cardStrings.EXTENDED_DESCRIPTION[3],
+                cardStrings.EXTENDED_DESCRIPTION[4]
+        ));
 
-        ArrayList<String> restricted = new ArrayList<>();
-        restricted.add("SPD"); //Speed Restricted -> Cannot draw cards
-        restricted.add("STA"); //Stamina Restricted -> Cannot gain Block
-        restricted.add("POW"); //Power Restricted -> Cannot gain Strength and Dex
-        restricted.add("GUT"); //Guts Restricted -> Cannot use Attacks
-        restricted.add("WIT"); //Wit Restricted -> Cannot use Power Cards
-
-        Collections.shuffle(restricted);
-
-        switch (restricted.get(0)){
-            case "SPD":
-                AbstractDungeon.effectList.add(new SpeechBubble(p.dialogX, p.dialogY, cardStrings.EXTENDED_DESCRIPTION[0], true));
-                applyToSelf(new NoDrawPower(p));
-                break;
-            case "STA":
-                AbstractDungeon.effectList.add(new SpeechBubble(p.dialogX, p.dialogY, cardStrings.EXTENDED_DESCRIPTION[1], true));
-                applyToSelf(new NoBlockPower(p, 2, true));
-                break;
-            case "POW":
-                AbstractDungeon.effectList.add(new SpeechBubble(p.dialogX, p.dialogY, cardStrings.EXTENDED_DESCRIPTION[2], true));
-                applyToSelf(new NoGainsPower(p, 2));
-                break;
-            case "GUT":
-                AbstractDungeon.effectList.add(new SpeechBubble(p.dialogX, p.dialogY, cardStrings.EXTENDED_DESCRIPTION[3], true));
-                applyToSelf(new EntangleWithAmount(p, 2));
-                break;
-            case "WIT":
-                AbstractDungeon.effectList.add(new SpeechBubble(p.dialogX, p.dialogY, cardStrings.EXTENDED_DESCRIPTION[4], true));
-                applyToSelf(new WitlessPower(p, 2));
-                break;
-        }
     }
 
     @Override

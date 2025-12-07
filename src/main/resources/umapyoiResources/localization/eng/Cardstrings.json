@@ -134,7 +134,7 @@
 
   "${ModID}:BlueRoseCloser": {
     "NAME": "Blue Rose Closer",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL If this kills an enemy, gain !M! [E] and draw !M! card{!M!|>1=s}."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Add !M! *Shiv{!M!|>1=s} to your hand. NL umapyoi:Sorrow: Add 1 more *Shiv to your hand."
   },
 
   "${ModID}:CompetitiveSpirit": {
@@ -144,7 +144,7 @@
 
   "${ModID}:HomestretchHaste": {
     "NAME": "Homestretch Haste",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL If this kills an enemy, draw !M! card{!M!|>1=s} and Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Draw 1 card for every !M! % HP missing from the enemy."
   },
 
   "${ModID}:InspirationStrikes": {
@@ -262,7 +262,7 @@
 
   "${ModID}:CertainVictory": {
     "NAME": "Certain Victory",
-    "DESCRIPTION": "When an enemy dies, gain !M! Vigor and draw 1 card."
+    "DESCRIPTION": "At the start of your turn, gain !M! Vigor."
   },
 
   "${ModID}:TeioStep": {
@@ -448,11 +448,11 @@
 
   "${ModID}:TrainingRestricted": {
     "NAME": "Restrict Training",
-    "DESCRIPTION": "Gain !M! [E]. NL Improve umapyoi:Mood by 2 ranks. Gain a random action-restricting debuff.",
+    "DESCRIPTION": "Gain !M! [E]. NL Improve umapyoi:Mood by 2 ranks. NL umapyoi:Restrict.",
     "EXTENDED_DESCRIPTION": ["My legs are still sore from yesterday's race...",
       "I'm not getting into the water!",
       "My arms! My poor, poor arms!",
-      "Guts isn't meta on Global yet!",
+      "I don't care if it's better, I'm still not training Guts!",
       "Studying is boring, I'd rather run!"
     ]
   },
@@ -538,7 +538,7 @@
 
   "${ModID}:HugeLead": {
     "NAME": "Huge Lead",
-    "DESCRIPTION": "{@@}Choose to add a *Doppelganger{!Upgrades!|>0=+}, *Scrawl{!Upgrades!|>0=+}, or *All *For *One{!Upgrades!|>0=+} to your hand. Exhaust.",
+    "DESCRIPTION": "{@@}Choose to add a *Machine *Learning{!Upgrades!|>0=+}, *Scrawl{!Upgrades!|>0=+}, or *All *For *One{!Upgrades!|>0=+} to your hand. Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "Inspired by Sakura Bakushin O!"
     ]
@@ -650,6 +650,90 @@
     "NAME": "U=Ma^2",
     "DESCRIPTION": "Exhaust ALL cards in your hand. For every 2 cards exhausted, gain 1 Artifact. Exhaust.",
     "UPGRADE_DESCRIPTION": "Exhaust ALL cards in your hand. For each card exhausted, gain 1 Artifact. Exhaust."
+  },
+
+  "${ModID}:ShadowBreak": {
+    "NAME": "Shadow Break",
+    "DESCRIPTION": "Exhaust ALL cards in your hand. For every !M! cards exhausted, add a copy of *Apparition+ to your hand. Exhaust."
+  },
+
+  "${ModID}:StamEater": {
+    "NAME": "Stamina Eater",
+    "DESCRIPTION": "Deal !D! damage. Heal HP equal to unblocked damage dealt. NL Exhaust."
+  },
+
+  "${ModID}:AFriend": {
+    "NAME": "A Friend :)",
+    "DESCRIPTION": "Randomly add a *Doppelganger, *Double *Tap, or *Burst to your hand. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Choose to add a copy of *Doppelganger, *Double *Tap, or *Burst to your hand. Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Inspired by Manhattan Cafe!"
+    ]
+  },
+
+  "${ModID}:Angling": {
+    "NAME": "Angling",
+    "DESCRIPTION": "Deal !D! damage. Copy a card from the discard to your hand, and apply Exhaust to it.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. Copy a card from the discard to your hand twice, and apply Exhaust to them."
+  },
+
+  "${ModID}:Oversight": {
+    "NAME": "Oversight",
+    "DESCRIPTION": "Gain 1 umapyoi:Berserk, 2 Ritual, and 4 umapyoi:Metallicize. At the start of your turn, umapyoi:Restrict."
+  },
+
+  "${ModID}:TenAMUma": {
+    "NAME": "10 AM Uma",
+    "DESCRIPTION": "Next turn, gain !M! [E] and umapyoi:Restrict."
+  },
+
+  "${ModID}:Buono": {
+    "NAME": "Buono!",
+    "DESCRIPTION": "Retain. NL If your Dexterity is negative, set it to !M!."
+  },
+
+  "${ModID}:SpeedEater": {
+    "NAME": "Speed Eater",
+    "DESCRIPTION": "Deal !D! damage 2 times. Exhaust all umapyoi:non-Uma cards in your hand and gain !M! Vigor for every card exhausted."
+  },
+
+  "${ModID}:TriumphantPulse": {
+    "NAME": "Triumphant Pulse",
+    "DESCRIPTION": "Deal !D! damage. Add a copy of this card to your hand. Exhaust."
+  },
+
+  "${ModID}:OpeningGambit": {
+    "NAME": "Opening Gambit",
+    "DESCRIPTION": "Innate. Deal !D! damage to ALL enemies and reduce their Strength by !M!. Exhaust."
+  },
+
+  "${ModID}:ShiftingGears": {
+    "NAME": "Shifting Gears",
+    "DESCRIPTION": "Convert half your Vigor to Strength. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Convert half your Vigor to Strength."
+  },
+
+  "${ModID}:MasterfulGambit": {
+    "NAME": "Masterful Gambit",
+    "DESCRIPTION": "Deal !D! damage. NL Gain 1 Vigor for every !M! % HP missing from the enemy."
+  },
+
+  "${ModID}:Unruffled": {
+    "NAME": "Unruffled",
+    "DESCRIPTION": "Choose to add an *Impervious, *Spirit *Shield, or *Buffer to your hand. Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Inspired by Matikanetannhauser!"
+    ]
+  },
+
+  "${ModID}:UmaStan": {
+    "NAME": "Uma Stan",
+    "DESCRIPTION": "Deal !D! damage. If there is a umapyoi:non-Uma card in your hand, improve your umapyoi:Mood by 1."
+  },
+
+  "${ModID}:WhiteLightning": {
+    "NAME": "White Lightning",
+    "DESCRIPTION": "Deal !D! damage !M! times. This does not consume Vigor."
   },
 
   "${ModID}:LateStartStatus": {

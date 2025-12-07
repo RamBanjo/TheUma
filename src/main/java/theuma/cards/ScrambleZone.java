@@ -19,7 +19,7 @@ public class ScrambleZone extends AbstractEasyCard {
 
     public ScrambleZone() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        this.baseBlock = 8;
+        this.baseBlock = 4;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

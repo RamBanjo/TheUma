@@ -5,6 +5,7 @@ import basemod.cardmods.ExhaustMod;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.blue.AllForOne;
+import com.megacrit.cardcrawl.cards.blue.MachineLearning;
 import com.megacrit.cardcrawl.cards.green.Doppelganger;
 import com.megacrit.cardcrawl.cards.purple.Scrawl;
 import com.megacrit.cardcrawl.cards.red.Bash;
@@ -26,7 +27,7 @@ public class HugeLead extends AbstractEasyCard {
 
     public HugeLead() {
         super(ID, 0, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
-        MultiCardPreview.add(this, new Doppelganger(), new Scrawl(), new AllForOne());
+        MultiCardPreview.add(this, new MachineLearning(), new Scrawl(), new AllForOne());
 
         this.exhaust = true;
     }
@@ -35,7 +36,7 @@ public class HugeLead extends AbstractEasyCard {
 
         ArrayList<AbstractCard> cardArrayList = new ArrayList<AbstractCard>();
 
-        cardArrayList.add(new Doppelganger());
+        cardArrayList.add(new MachineLearning());
         cardArrayList.add(new Scrawl());
         cardArrayList.add(new AllForOne());
 

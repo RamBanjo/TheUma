@@ -13,7 +13,7 @@ public class ExerciseTheRight extends AbstractEasyCard {
     // intellij stuff skill, self, basic, , ,  5, 3, ,
 
     public ExerciseTheRight() {
-        super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 2, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
         this.exhaust = true;
         this.baseMagicNumber = this.magicNumber = 2;
     }

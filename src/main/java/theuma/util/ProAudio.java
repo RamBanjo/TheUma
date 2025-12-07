@@ -13,5 +13,6 @@ public enum ProAudio {
     HARIKITTE_IKOU,
     UMAPYOI,
     GOLSHI_ENDING_1,
-    GOLSHI_ENDING_2
+    GOLSHI_ENDING_2,
+    MAMBO
 }

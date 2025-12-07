@@ -14,7 +14,7 @@ public class ProfessorOfCurvature extends AbstractEasyCard {
 
     public ProfessorOfCurvature() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
-        this.baseMagicNumber = this.magicNumber = 4;
+        this.baseMagicNumber = this.magicNumber = 3;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

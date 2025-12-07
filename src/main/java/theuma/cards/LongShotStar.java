@@ -7,6 +7,8 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import theuma.cards.AbstractEasyCard;
 
 import static theuma.ModFile.makeID;
@@ -37,10 +39,18 @@ public class LongShotStar extends AbstractEasyCard {
 
     public void applyPowers() {
         int realBaseDamage = this.baseDamage;
-
         int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
+        int vigor = 0;
+        AbstractPower vigorPow = adp().getPower(VigorPower.POWER_ID);
+
+        if (vigorPow != null){
+            vigor = vigorPow.amount;
+        }
+
         int multiplier = cardConditional(count) ? magicNumber : 1;
-        this.baseDamage *= multiplier;
+
+        this.baseDamage = ((this.baseDamage + vigor) * multiplier) - vigor;
+
         super.applyPowers();
         this.baseDamage = realBaseDamage;
         this.isDamageModified = this.damage != this.baseDamage;
@@ -68,14 +78,23 @@ public class LongShotStar extends AbstractEasyCard {
     public void calculateCardDamage(AbstractMonster mo) {
         int realBaseDamage = this.baseDamage;
         int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
+        int vigor = 0;
+        AbstractPower vigorPow = adp().getPower(VigorPower.POWER_ID);
+
+        if (vigorPow != null){
+            vigor = vigorPow.amount;
+        }
+
         int multiplier = cardConditional(count) ? magicNumber : 1;
-        this.baseDamage *= multiplier;
+
+        this.baseDamage = ((this.baseDamage + vigor) * multiplier) - vigor;
+
         super.calculateCardDamage(mo);
         this.baseDamage = realBaseDamage;
         this.isDamageModified = this.damage != this.baseDamage;
     }
 
     public void upp() {
-        upgradeMagicNumber(3);
+        upgradeMagicNumber(1);
     }
 }

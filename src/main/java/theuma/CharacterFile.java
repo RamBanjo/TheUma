@@ -135,7 +135,7 @@ public class CharacterFile extends CustomPlayer {
     public AbstractCard getStartCardForEvent() {
 //        System.out.println("YOU NEED TO SET getStartCardForEvent() in your " + getClass().getSimpleName() + " file!");
 //        return null;
-        return new Strike();
+        return new PaceChaserCard();
     }
 
     @Override

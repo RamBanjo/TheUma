@@ -36,5 +36,29 @@
       "blur"
     ],
     "DESCRIPTION": "Block will not be removed at the start of your turn."
+  },
+
+  {
+    "PROPER_NAME": "Restrict",
+    "NAMES": [
+      "restrict"
+    ],
+    "DESCRIPTION": "Apply a random action-restricting debuff to you. (Includes #yNo #yDraw [REMOVE_SPACE], #yNo #yBlock [REMOVE_SPACE], #yNo #yGains [REMOVE_SPACE], #yEntangle [REMOVE_SPACE], and #yWitless [REMOVE_SPACE].)"
+  },
+
+  {
+    "PROPER_NAME": "Metallicize",
+    "NAMES": [
+      "metallicize"
+    ],
+    "DESCRIPTION": "Gain Block at the end of your turn."
+  },
+
+  {
+    "PROPER_NAME": "Berserk",
+    "NAMES": [
+      "berserk"
+    ],
+    "DESCRIPTION": "Gain Energy at the start of your turn."
   }
 ]

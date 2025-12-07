@@ -23,7 +23,7 @@ public class BreathOfFreshAir extends AbstractEasyCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         atb(new GainEnergyAction(magicNumber));
-        applyToSelf(new SkillRefundPower(p, 1));
+        applyToSelf(new SkillRefundPower(p, magicNumber));
     }
 
     @Override
