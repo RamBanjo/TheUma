@@ -22,8 +22,10 @@ public class TriumphantPulse extends AbstractEasyCard {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
 
         AbstractCard newPulse = makeStatEquivalentCopy();
-        if (newPulse.costForTurn != 1){
+        if (newPulse.costForTurn != 1 || newPulse.cost != 1){
+            newPulse.cost = 0;
             newPulse.setCostForTurn(1);
+            newPulse.isCostModified = false;
         }
 
         addToBot(new MakeTempCardInHandAction(newPulse));
