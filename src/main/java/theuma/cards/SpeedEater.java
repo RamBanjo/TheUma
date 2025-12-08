@@ -42,7 +42,10 @@ public class SpeedEater extends AbstractEasyCard {
         }
 
         int vigorGain = exhausted * magicNumber;
-        applyToSelf(new VigorPower(p, vigorGain));
+
+        if (vigorGain > 0) {
+            applyToSelf(new VigorPower(p, vigorGain));
+        }
     }
 
     @Override
