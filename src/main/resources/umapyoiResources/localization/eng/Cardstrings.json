@@ -699,7 +699,7 @@
 
   "${ModID}:TriumphantPulse": {
     "NAME": "Triumphant Pulse",
-    "DESCRIPTION": "Deal !D! damage. Add a copy of this card to your hand. Exhaust."
+    "DESCRIPTION": "Deal !D! damage. Add a copy of this card to your hand. This card's cost cannot be modified. Exhaust."
   },
 
   "${ModID}:OpeningGambit": {
