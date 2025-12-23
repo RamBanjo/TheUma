@@ -26,6 +26,7 @@ public class StamEater extends AbstractEasyCard {
         super(ID, 2, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
 
         this.baseDamage = 6;
+        this.exhaust = true;
     }
 
     @Override
