@@ -42,9 +42,9 @@ public class AcupuncturistEvent extends AbstractImageEvent {
         }
 
         this.screen = CurScreen.INTRO;
-        this.imageEventText.setDialogOption(OPTIONS[0] + OPTIONS[3] + OPTIONS[4] + OPTIONS[3] + OPTIONS[8]);
-        this.imageEventText.setDialogOption(OPTIONS[1] + OPTIONS[3] + OPTIONS[5] + OPTIONS[3] + OPTIONS[7]);
-        this.imageEventText.setDialogOption(OPTIONS[2] + OPTIONS[3] + OPTIONS[6] + OPTIONS[3] + OPTIONS[9]);
+        this.imageEventText.setDialogOption(OPTIONS[0] + winChance + OPTIONS[3] + OPTIONS[4] + (100 - winChance) + OPTIONS[3] + OPTIONS[8]);
+        this.imageEventText.setDialogOption(OPTIONS[1] + winChance + OPTIONS[3] + OPTIONS[5] + (100 - winChance) + OPTIONS[3] + OPTIONS[7]);
+        this.imageEventText.setDialogOption(OPTIONS[2] + winChance + OPTIONS[3] + OPTIONS[6] + (100 - winChance) + OPTIONS[3] + OPTIONS[9]);
         this.imageEventText.setDialogOption(OPTIONS[10]);
         this.success = AbstractDungeon.miscRng.randomBoolean(winChance / 100f);
     }
@@ -63,18 +63,19 @@ public class AcupuncturistEvent extends AbstractImageEvent {
                         if(success){
                             this.screen = CurScreen.SUCCESS;
                             this.imageEventText.updateBodyText(DESCRIPTIONS[2] + DESCRIPTIONS[3]);
+                            CardCrawlGame.sound.play("HEAL_1");
                             AbstractRelic newRelic = AbstractDungeon.returnRandomScreenlessRelic(AbstractRelic.RelicTier.RARE);
                             AbstractDungeon.getCurrRoom().spawnRelicAndObtain(this.drawX, this.drawY, newRelic);
                             logMetricObtainRelic(ID, OPTIONS[0], newRelic);
                         }else{
                             this.screen = CurScreen.FAIL;
                             this.imageEventText.updateBodyText(DESCRIPTIONS[2] + DESCRIPTIONS[4]);
-                            logMetricObtainCard(ID, OPTIONS[1], new MigraineCurse());
+                            logMetricObtainCard(ID, OPTIONS[0], new MigraineCurse());
                             AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new MigraineCurse(), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
                         }
 
                         this.imageEventText.clearRemainingOptions();
-                        this.imageEventText.setDialogOption(OPTIONS[10]);
+                        this.imageEventText.updateDialogOption(0, OPTIONS[10]);
 
                         break;
                     case 1:
@@ -86,6 +87,7 @@ public class AcupuncturistEvent extends AbstractImageEvent {
                         if(success){
                             this.screen = CurScreen.SUCCESS;
                             this.imageEventText.updateBodyText(DESCRIPTIONS[2] + DESCRIPTIONS[3]);
+                            CardCrawlGame.sound.play("HEAL_1");
                             logMetricObtainCard(ID, OPTIONS[1], new LegacyLivesOn());
                             AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new LegacyLivesOn(), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
                         }else{
@@ -95,7 +97,7 @@ public class AcupuncturistEvent extends AbstractImageEvent {
                         }
 
                         this.imageEventText.clearRemainingOptions();
-                        this.imageEventText.setDialogOption(OPTIONS[10]);
+                        this.imageEventText.updateDialogOption(0, OPTIONS[10]);
 
                         break;
                     case 2:
@@ -108,6 +110,7 @@ public class AcupuncturistEvent extends AbstractImageEvent {
                             this.screen = CurScreen.SUCCESS;
                             this.imageEventText.updateBodyText(DESCRIPTIONS[2] + DESCRIPTIONS[3]);
                             int maxGain = 10;
+                            CardCrawlGame.sound.play("HEAL_1");
                             logMetricMaxHPGain(ID, OPTIONS[2], maxGain);
                             adp().increaseMaxHp(maxGain, true);
                         }else{
@@ -118,7 +121,7 @@ public class AcupuncturistEvent extends AbstractImageEvent {
                         }
 
                         this.imageEventText.clearRemainingOptions();
-                        this.imageEventText.setDialogOption(OPTIONS[10]);
+                        this.imageEventText.updateDialogOption(0, OPTIONS[10]);
 
                         break;
                     default:
@@ -126,7 +129,7 @@ public class AcupuncturistEvent extends AbstractImageEvent {
                         this.screen = CurScreen.LEAVE;
                         this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
                         this.imageEventText.clearRemainingOptions();
-                        this.imageEventText.setDialogOption(OPTIONS[10]);
+                        this.imageEventText.updateDialogOption(0, OPTIONS[10]);
                 }
                 break;
             default:

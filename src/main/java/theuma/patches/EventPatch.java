@@ -12,9 +12,9 @@ public class EventPatch {
             method = "getEventName",
             paramtypez = String.class
     )
-    public class GetEventNamePatch {
+    public static class GetEventNamePatch {
         @SpirePrefixPatch
-        public SpireReturn<String> GetEventName(String eventID) {
+        public static SpireReturn<String> GetEventName(String eventID) {
             if (eventID != null && eventID.startsWith("umapyoi:")) {
                 return SpireReturn.Return(CardCrawlGame.languagePack.getEventString(eventID).NAME);
             }

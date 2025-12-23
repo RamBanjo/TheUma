@@ -1,12 +1,12 @@
 {
-  "The Woman in Blue": {
+  "${ModID}:AcupuncturistEvent": {
     "NAME": "The Acupuncturist",
     "DESCRIPTIONS": [
       "A familiar blonde woman appears before you and offers to activate powers hidden within you. While dubious of her claims, you feel tempted to try one of her treatments...",
       "You decide to not undergo any \"treatment\" this \"doctor\" may offer.",
       "The blonde woman raises her needles...",
-      "NL NL #g@PUNCTURE@ #g@PERFECT!@ NL NL You feel a lot more powerful than before.",
-      "NL NL #r@PUNCTURE@ #r@FAILED...@ NL NL You don't feel so good... You pass out immediately. As you regain consciousness, the blonde woman is nowhere to be seen."
+      " NL NL #g@PUNCTURE@ #g@PERFECT!@ NL NL You feel a lot more powerful than before!",
+      " NL NL #r@PUNCTURE@ #r@FAILED...@ NL NL You don't feel so good... You pass out immediately. As you regain consciousness, the blonde woman is nowhere to be seen."
     ],
     "OPTIONS": [
       "[Strength Chakra] #g",
