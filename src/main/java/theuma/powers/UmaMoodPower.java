@@ -1,5 +1,6 @@
 package theuma.powers;
 
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -9,10 +10,14 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
+import theuma.vfx.MoodDisplayEffect;
 
 import static theuma.ModFile.makeID;
+import static theuma.util.CommonUmaMethods.spawnVFXForCurrentPlayerMood;
+import static theuma.util.Wiz.*;
 
 public class UmaMoodPower extends AbstractEasyPower{
     public final static String ID = makeID("UmaMood");
@@ -32,6 +37,7 @@ public class UmaMoodPower extends AbstractEasyPower{
 
         if(!owner.hasPower(ID) && (amount > MAX_MOOD || amount < MIN_MOOD)){
             clamp_mood_amt();
+
         }else if(owner.hasPower(ID)){
             boolean exceedMax = owner.getPower(ID).amount + amount > MAX_MOOD;
             boolean exceedMin = owner.getPower(ID).amount + amount < MIN_MOOD;
@@ -39,10 +45,10 @@ public class UmaMoodPower extends AbstractEasyPower{
             if (exceedMax || exceedMin){
                 clamp_mood_amt();
             }
+
         }
 
-
-        System.out.println("UmaMood: " + amount);
+        spawnVFXForCurrentPlayerMood(this.amount);
     }
 
     public UmaMoodPower(AbstractCreature owner, int amount, boolean makeThoughtBubble){
