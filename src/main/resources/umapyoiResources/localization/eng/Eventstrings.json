@@ -1,0 +1,25 @@
+{
+  "The Woman in Blue": {
+    "NAME": "The Acupuncturist",
+    "DESCRIPTIONS": [
+      "A familiar blonde woman appears before you and offers to activate powers hidden within you. While dubious of her claims, you feel tempted to try one of her treatments...",
+      "You decide to not undergo any \"treatment\" this \"doctor\" may offer.",
+      "The blonde woman raises her needles...",
+      "NL NL #g@PUNCTURE@ #g@PERFECT!@ NL NL You feel a lot more powerful than before.",
+      "NL NL #r@PUNCTURE@ #r@FAILED...@ NL NL You don't feel so good... You pass out immediately. As you regain consciousness, the blonde woman is nowhere to be seen."
+    ],
+    "OPTIONS": [
+      "[Strength Chakra] #g",
+      "[Winning Chakra] #g",
+      "[Health Chakra] #g",
+      "%: ",
+      "#gObtain #ga #gRare #grelic, #r",
+      "#gAdd #gLegacies #gLive #gOn!+ #gto #gyour #gdeck, #r",
+      "#gGain #b10 #gMax #gHP #r",
+      "#rAdd #rPractice #rPoor #rto #ryour #rdeck",
+      "#rAdd #rMigraine #rto #ryour #rdeck",
+      "#rAdd #rSkin #rOutbreak #rto #ryour #rdeck",
+      "[Leave]"
+    ]
+  }
+}
