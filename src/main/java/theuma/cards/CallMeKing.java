@@ -53,7 +53,7 @@ public class CallMeKing extends AbstractEasyCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
-        atb(new DrawCardAction(magicNumber));
+        atb(new DrawCardAction(1));
         atb(new MakeTempCardInDiscardAction(this.makeStatEquivalentCopy(), secondMagic));
     }
 
