@@ -375,12 +375,12 @@
 
   "${ModID}:ShakeItOut": {
     "NAME": "Shake It Out",
-    "DESCRIPTION": "Retain. Gain !B! Block. NL Increase gain by !M! for every card created while this is in your hand."
+    "DESCRIPTION": "Retain. NL Gain !B! Block. NL Increase gain by !M! for every card created while this is in your hand."
   },
 
   "${ModID}:TailHeldHigh": {
     "NAME": "Tail Held High",
-    "DESCRIPTION": "Retain. Deal !D! damage. NL Increase damage by !M! for every card created while this is in your hand."
+    "DESCRIPTION": "Retain. NL Deal !D! damage. NL Increase damage by !M! for every card created while this is in your hand."
   },
 
   "${ModID}:ProfessorOfCurvature": {

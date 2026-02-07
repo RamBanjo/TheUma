@@ -2,15 +2,19 @@ package theuma;
 
 import basemod.AutoAdd;
 import basemod.BaseMod;
+import basemod.EasyConfigPanel;
 import basemod.abstracts.DynamicVariable;
 import basemod.eventUtil.AddEventParams;
 import basemod.eventUtil.EventUtils;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.assets.loaders.TextureLoader;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
+import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.Settings;
@@ -18,6 +22,7 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import theuma.cards.AbstractEasyCard;
 import theuma.cards.cardvars.AbstractEasyDynamicVariable;
+import theuma.config.UmaConfig;
 import theuma.events.AcupuncturistEvent;
 import theuma.potions.AbstractEasyPotion;
 import theuma.relics.AbstractEasyRelic;
@@ -74,6 +79,7 @@ public class ModFile implements
 
     public ModFile() {
         BaseMod.subscribe(this);
+
 
         BaseMod.addColor(CharacterFile.Enums.UMA_COLOR, characterColor, characterColor, characterColor,
                 characterColor, characterColor, characterColor, characterColor,
@@ -189,8 +195,13 @@ public class ModFile implements
 
     @Override
     public void receivePostInitialize() {
+
+        Texture badge = new Texture(makeImagePath("ui/badge.png"));
+        BaseMod.registerModBadge(badge, "The Uma", "RamChops Games", "This mod adds Gold Ship as a playable character.", new UmaConfig());
+
         BaseMod.addEvent(new AddEventParams.Builder(AcupuncturistEvent.ID, AcupuncturistEvent.class)
                 .eventType(EventUtils.EventType.NORMAL)
+                .spawnCondition(UmaConfig::canSpawnUmaEvents)
                 .create());
     }
 }

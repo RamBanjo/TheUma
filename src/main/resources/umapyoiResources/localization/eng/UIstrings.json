@@ -13,5 +13,12 @@
 
   "${ModID}:AnglingAction": {
     "TEXT": ["Choose a card to copy to your hand."]
+  },
+
+  "${ModID}:UmaConfig": {
+    "TEXT_DICT": {
+      "umaEventToggle": "Enable Uma Events.",
+      "umaAllCharToggle": "Allow non-Uma characters to see Uma Events."
+    }
   }
 }
